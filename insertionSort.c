@@ -17,8 +17,10 @@ void insertionSort(int arr[],int len)
 	{
 		j=i-1;
 		while(!(arr[j]<=arr[i] || j==0)){j--;}
-		for(k=i;k>=0 || k>=j;k--){swap(&arr[k],&arr[k-1]);}
-		printf("\n for i==> %d\t:",i);
+
+		for(k=i-1;k>=0 || k>=j;k--){swap(&arr[k+1],&arr[k]);}
+		printf("\n for \ti==> %d\t:",i);
+		printf("\n \tj==>%d\t: \n\t",j);
 		for(int i=0;i<len;i++){printf("%d\t",arr[i]);}
 	}
 	printf("\n");
