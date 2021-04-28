@@ -8,21 +8,21 @@ struct Node
 
 void insertNode(struct Node* root,int data)
 {
-    struct Node* temp=root;
-    struct Node * newNode=(struct Node*)(malloc(sizeof(struct Node)));    
+    struct Node *parent=root,*current;
+    struct Node *newNode=(struct Node*)(malloc(sizeof(struct Node)));    
     newNode=&(struct Node){.data=data,.leftChild=NULL,.rightChild=NULL};
-
-    while(!temp==NULL)
+    if()
+    while(!current==NULL)
     {
-        if(temp->data>=data){temp=temp->leftChild;}        
-        else{temp=temp->rightChild;}        
+        if(current->data>=data){current=current->leftChild;}        
+        else{current=current->rightChild;}        
     }
-    temp=newNode;
+    current=newNode;
 }
 void printInorder(struct Node* root)
 {
-    struct Node* temp=root;    
-    while (!temp==NULL){}
+    struct Node* current=root;    
+    while (!current==NULL){}
 }
 int main()
 {
