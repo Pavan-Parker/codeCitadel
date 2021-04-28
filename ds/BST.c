@@ -45,19 +45,22 @@ void printInorder(struct Node* root)
 int main()
 {
     struct Node* root=NULL;
-    root=insertNode(root,3);
+    root=insertNode(root,10);
     printInorder(root);printf("\n");
 
-    root=insertNode(root,1);
+    root=insertNode(root,11);
     printInorder(root);printf("\n");
 
-    root=insertNode(root,4);
+    root=insertNode(root,7);
     printInorder(root);printf("\n");
 
     root=insertNode(root,9);
     printInorder(root);printf("\n");
 
-    root=insertNode(root,6);
+    root=insertNode(root,15);
+    printInorder(root);printf("\n");
+
+    root=insertNode(root,8);
     printInorder(root);printf("\n");
 
 
