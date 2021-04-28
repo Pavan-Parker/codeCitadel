@@ -18,7 +18,7 @@ void print(struct Node *head)
 {
     struct Node *temp=head;
     while(temp!=NULL){printf("%d -> ",temp->value);temp=temp->nextNode;}
-    printf("NULL");
+    printf("NULL\n");
 }
 
 int main()
