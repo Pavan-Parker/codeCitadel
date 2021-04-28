@@ -19,41 +19,47 @@ struct Node* insertNode(struct Node* root,int data)
     if(current==NULL){root=newNode;}
     else
     {
-        while(!(current==NULL))
+        while((current!=NULL))
         {
-            printf("%d",current->data);
+            // printf("%d",current->data);
             parent=current;
             if(current->data>=data){direction=0; current=current->leftChild;}        
             else{direction=1;current=current->rightChild;}        
         }
         if(direction==0){parent->leftChild=newNode;}
-        else{parent->leftChild=newNode;}
+        else{parent->rightChild=newNode;}
     }
     return root;
 }
 void printInorder(struct Node* root)
 {
     struct Node* current=root;    
-    while (!(current==NULL))
+    if(current!=NULL)
     {
         printInorder(current->leftChild);
-        printf("%d -> ",current->data);
-        printInorder(current->leftChild);
+        printf("%d->\t",current->data);
+        printInorder(current->rightChild);
     }
-    printf("\t done Printing\n");
+    // printf("NULL->\t");
 }
 int main()
 {
     struct Node* root=NULL;
     root=insertNode(root,3);
-    // printInorder(root);
+    printInorder(root);printf("\n");
+
     root=insertNode(root,1);
-    // printInorder(root);
+    printInorder(root);printf("\n");
+
     root=insertNode(root,4);
-    // printInorder(root);
+    printInorder(root);printf("\n");
+
     root=insertNode(root,9);
-    // printInorder(root);
+    printInorder(root);printf("\n");
+
     root=insertNode(root,6);
-    printInorder(root);
+    printInorder(root);printf("\n");
+
+
     return 0;
 }
