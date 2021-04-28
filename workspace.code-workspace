@@ -4,9 +4,13 @@
 			"path": "."
 		}
 	],
+<<<<<<< HEAD
 	"settings": {
 		"files.associations": {
 			"stdio.h": "c"
 		}
 	}
+=======
+	"settings": {}
+>>>>>>> 65e9d1e889957a9126e2dbf440fb2971bb6e4fd2
 }
