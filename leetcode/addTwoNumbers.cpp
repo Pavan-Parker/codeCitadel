@@ -32,13 +32,17 @@ int main()
 {
    ListNode* head=new ListNode();
    printLL(head);
+
    ListNode* second=new ListNode(1);
    head->next=second;
    printLL(head);
-   ListNode* fourth=new ListNode(2);
+   
+   ListNode* fourth=new ListNode(3);
    printLL(head);
+   
    ListNode* third=new ListNode(2,fourth);
    second->next=third;
    printLL(head);
+   
    return 0;
 }
