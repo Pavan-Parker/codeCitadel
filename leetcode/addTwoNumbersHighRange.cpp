@@ -70,7 +70,30 @@ public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
     {
         ListNode *temp1=l1,*temp2=l2;
+        ListNode *output=new ListNode(0);
+        bool EOL1=false,EOL2=false;
+        int size=0, val1=0,val2=0;
+        int sum=0,carry=0;
+        // while(!EOL)
+        // {
+        //     if(temp1->next==NULL){EOL=1;}
+        //     if(temp2->next==NULL){EOL=2;}
+        //     sum+=((temp1->val+temp2->val)*pow(10,size));            
+        //     size++;
+        // }
+        while(!(EOL1&&EOL2))
+        {
+            if(EOL1){val1=0;}else{val1=temp1->val;}
+            if(EOL2){val2=0;}else{val2=temp2->val;}
+            =((val1+val2)*pow(10,size));            
+            size++;
+            if(!EOL1){temp1=temp1->next;}
+            if(!EOL2){temp2=temp2->next;}
+            EOL1=(temp1==NULL);
+            EOL2=(temp2==NULL);
+        }
         
+
         
     }
 };
