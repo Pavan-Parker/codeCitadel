@@ -67,10 +67,11 @@ public:
         return split(outl1+outl2);
         
     }
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
     {
         ListNode *temp1=l1,*temp2=l2;
         ListNode *output=new ListNode(0);
+        ListNode *outputTemp=output;
         bool EOL1=false,EOL2=false;
         int size=0, val1=0,val2=0;
         int sum=0,carry=0;
@@ -81,20 +82,31 @@ public:
         //     sum+=((temp1->val+temp2->val)*pow(10,size));            
         //     size++;
         // }
-        while(!(EOL1&&EOL2))
+        while(1)
         {
+            
             if(EOL1){val1=0;}else{val1=temp1->val;}
             if(EOL2){val2=0;}else{val2=temp2->val;}
-            =((val1+val2)*pow(10,size));            
+            
+            outputTemp->val=(val1+val2+carry)%10;
+            
+            carry=(val1+val2+carry)/10;            
+            
             size++;
             if(!EOL1){temp1=temp1->next;}
             if(!EOL2){temp2=temp2->next;}
             EOL1=(temp1==NULL);
             EOL2=(temp2==NULL);
+            if(!(EOL1&&EOL2))
+            {
+                outputTemp->next=new ListNode();
+                outputTemp=outputTemp->next;
+            }
+            else{break;}
         }
         
 
-        
+        return output;
     }
 };
 
