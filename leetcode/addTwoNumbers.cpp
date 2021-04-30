@@ -1,8 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
-class ListNode
+// class ListNode
+// {
+//     public:   
+//         int val;
+//         ListNode * next;
+//         ListNode(){val=0;next=NULL;}
+//         ListNode(int data){val=data;next=NULL;}
+//         ListNode(int data,ListNode *nextNode){val=data;next=nextNode;}
+              
+// };
+struct ListNode
 {
-    public:   
+    // public:   
         int val;
         ListNode * next;
         ListNode(){val=0;next=NULL;}
@@ -11,12 +21,23 @@ class ListNode
               
 };
 
-// class Solution {
-// public:
-//     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        
-//     }
-// };
+class Solution {
+public:
+    int concat(ListNode* l)
+    {
+        ListNode* temp=l;        
+        int size;
+        while(temp!=NULL)
+        {
+            temp=temp->next;
+        }
+
+    }
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+    {
+
+    }
+};
 void printLL(ListNode* head)
 {
     ListNode* temp=head;
@@ -30,17 +51,17 @@ void printLL(ListNode* head)
 
 int main()
 {
-   ListNode* head=new ListNode();
+   struct ListNode* head=new ListNode();
    printLL(head);
 
-   ListNode* second=new ListNode(1);
+   struct ListNode* second=new ListNode(1);
    head->next=second;
    printLL(head);
    
-   ListNode* fourth=new ListNode(3);
+   struct ListNode* fourth=new ListNode(3);
    printLL(head);
    
-   ListNode* third=new ListNode(2,fourth);
+   struct ListNode* third=new ListNode(2,fourth);
    second->next=third;
    printLL(head);
    
