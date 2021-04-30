@@ -34,7 +34,7 @@ public:
             size++;
             temp=temp->next;
         }
-
+        // cout<<"returns "<< x <<":"<<size<<endl;
         return vector <int>{x,size};
 
     }
@@ -47,7 +47,7 @@ public:
         {
             temp->val=i%10;
             i=i/10;
-            if(!i)
+            if(i)
             {
                 temp->next=new ListNode(0,NULL);
                 temp=temp->next;
@@ -58,25 +58,33 @@ public:
         return root;
 
     }
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+    ListNode* addTwoNumbersOld(ListNode* l1, ListNode* l2)
     {
-        int outl1,outl2,size1,size2;
-        vector<int>{outl1,size1}=concat(l1);
-        vector<int>{outl2,size2}=concat(l2);
+        vector<int>r1=concat(l1);
+        vector<int>r2=concat(l2);
+        int outl1=r1[0],outl2=r2[0],size1=r1[1],size2=r2[1];
+        cout<< size1 << " : "<< outl1<<" and " <<size2 << " : "<< outl2 << endl;
         return split(outl1+outl2);
         
     }
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+    {
+        ListNode *temp1=l1,*temp2=l2;
+        
+        
+    }
 };
-// void printLL(ListNode* head)
-// {
-//     ListNode* temp=head;
-//     while(temp!=NULL)
-//     {
-//         cout<<temp->val<< " -> ";
-//         temp=temp->next;
-//     }
-//     cout<<endl;
-// }
+
+void printLL(ListNode* head)
+{
+    struct ListNode* temp=head;
+    while(temp!=NULL)
+    {
+        cout<<temp->val<< " -> ";
+        temp=temp->next;
+    }
+    cout<<endl;
+}
 
 int main()
 {
@@ -95,10 +103,9 @@ int main()
 //    printLL(head);
 
     Solution s;
-    struct ListNode* x=s.split();
-    struct ListNode* x=s.split();
-
-
+    struct ListNode* x=s.split(9);
+    struct ListNode* y=s.split(9999999991);
+    cout<<s.concat(s.addTwoNumbers(x,y))[0]<<endl;
 
    return 0;
 
