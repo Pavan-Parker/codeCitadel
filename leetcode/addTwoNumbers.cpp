@@ -23,19 +23,43 @@ struct ListNode
 
 class Solution {
 public:
-    int concat(ListNode* l)
+    vector<int> concat(ListNode* l)
     {
         ListNode* temp=l;        
-        int size;
+        int x=0,size=0;
+
         while(temp!=NULL)
         {
+            x+=((temp->val)*pow(10,size));
+            size++;
             temp=temp->next;
         }
+
+        return vector <int>{x,size};
+
+    }
+    ListNode* split(int n)
+    {
+        int i=n;
+        struct ListNode* root=new ListNode(0,NULL);
+        struct ListNode* temp=root;
+        while(i)
+        {
+            temp->val=i%10;
+            temp->next=new ListNode(0,NULL);
+            temp=temp->next;
+            i=i/10;
+        }
+        return root;
 
     }
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
     {
-
+        int outl1,outl2,size1,size2;
+        vector<int>{outl1,size1}=concat(l1);
+        vector<int>{outl2,size2}=concat(l2);
+        return split(outl1+outl2);
+        
     }
 };
 void printLL(ListNode* head)
@@ -64,6 +88,7 @@ int main()
    struct ListNode* third=new ListNode(2,fourth);
    second->next=third;
    printLL(head);
-   
+
+
    return 0;
 }
