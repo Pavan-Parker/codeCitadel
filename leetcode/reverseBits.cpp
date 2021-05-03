@@ -11,5 +11,6 @@ public:
             else{rev>>=1;}
         }
 
+        return rev;
     }
 };
