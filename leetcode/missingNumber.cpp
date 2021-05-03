@@ -18,6 +18,6 @@ public:
             des=0;
         }
         for(int i=1;i<nums.size();i++){temp^=nums[i];}
-        return des^temp;
+        return (des^temp)%(int)pow(2,(int)log2(des));
     }
 };
