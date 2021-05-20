@@ -13,6 +13,8 @@ class Complex(object):
         pass
     def mod(self):
         pass
+
+     
     def __str__(self):
         if self.imaginary == 0:
             result = "%.2f+0.00i" % (self.real)
