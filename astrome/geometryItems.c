@@ -105,7 +105,7 @@ int main()
   scanf("%d", &n);
   printf("%d geometric items\n", n);
 
-  object = malloc(sizeof(struct Geometry*)*n);
+  object = (struct Geometry **)malloc(sizeof(struct Geometry*)*n);
 
   for(int i = 0; i < n; i++)
   {
