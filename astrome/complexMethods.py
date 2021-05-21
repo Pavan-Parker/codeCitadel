@@ -14,8 +14,9 @@ class Complex(object):
         return Complex(self.real*no.real+self.imaginary*no.imaginary,   -self.real*no.imaginary+self.imaginary*no.real)
     def mod(self):
         return Complex(math.sqrt(pow(self.real,2)+pow(self.imaginary,2)),0)
+    def __str__(self):
+        return f"{round(self.real)}+{round(self.imaginary)}i"
 
-     
     def __str__(self):
         if self.imaginary == 0:
             result = "%.2f+0.00i" % (self.real)
