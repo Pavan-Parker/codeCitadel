@@ -33,7 +33,7 @@ struct Geometry
 
 void initRectangle(struct Geometry **object)
 {
-    strcpy((*object)->type,"Rectangle");
+    (*object)->type=0;
     scanf(SCANF_FMT_RECTANGLE,&((*object)->arg[0]),&((*object)->arg[1]),&((*object)->arg[2]),&((*object)->arg[3]));
     printf(PRINTF_FMT_RECTANGLE,(*object)->arg[0],(*object)->arg[1],(*object)->arg[2],(*object)->arg[3]);
 }
@@ -41,45 +41,56 @@ void initRectangle(struct Geometry **object)
 
 void initSquare(struct Geometry **object)
 {
-    strcpy((*object)->type,"Square");
+    (*object)->type=1;
     scanf(SCANF_FMT_SQUARE,&((*object)->arg[0]),&((*object)->arg[1]),&((*object)->arg[2]));
 }
 
 
 void initCircle(struct Geometry **object)
 {
-    strcpy((*object)->type,"Circle");
+    (*object)->type=2;
     scanf(SCANF_FMT_CIRCLE,&((*object)->arg[0]),&((*object)->arg[1]),&((*object)->arg[2]));
 }
 
 
 void initLine(struct Geometry **object)
 {
-    strcpy((*object)->type,"Line");
+    (*object)->type=3;
+    
     scanf(SCANF_FMT_LINE,&((*object)->arg[0]),&((*object)->arg[1]),&((*object)->arg[2]),&((*object)->arg[3]));
 }
 
 
 void printGeometry(struct Geometry* object)
 {
-    if(!strcmp(object->type,"Rectangle"))
+    switch (object->type)
     {
-        printf(PRINTF_FMT_RECTANGLE,object->arg[0],object->arg[1],object->arg[2],object->arg[3]);
+        case 0:    
+            {
+                printf(PRINTF_FMT_RECTANGLE,object->arg[0],object->arg[1],object->arg[2],object->arg[3]);
+                break;
+            }
+        case 1:
+            {
+                printf(PRINTF_FMT_SQUARE,object->arg[0],object->arg[1],object->arg[2]);
+                break;
+            }
+        case 2:
+            {
+                printf(PRINTF_FMT_CIRCLE,object->arg[0],object->arg[1],object->arg[2]);
+                break;
+            }
+        case 3:
+            {
+                printf(PRINTF_FMT_LINE,object->arg[0],object->arg[1],object->arg[2],object->arg[3]);
+                break;
+            }
+        default:
+            {
+                printf("wut!");
+                break;                
+            }
     }
-    else if(!strcmp(object->type,"Square"))
-    {
-        printf(PRINTF_FMT_SQUARE,object->arg[0],object->arg[1],object->arg[2]);
-
-    }
-    else if(!strcmp(object->type,"Circle"))
-    {
-       printf(PRINTF_FMT_CIRCLE,object->arg[0],object->arg[1],object->arg[2]);
-    }
-    else if(!strcmp(object->type,"Line"))
-    {
-    printf(PRINTF_FMT_LINE,object->arg[0],object->arg[1],object->arg[2],object->arg[3]);
-    }
-    else{printf("wut");}
 }
 
 void freeGeometry(struct Geometry* object)
@@ -136,6 +147,7 @@ int main()
   }
 
   free(object);
+  
 }
 
 
