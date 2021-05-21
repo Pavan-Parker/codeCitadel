@@ -27,9 +27,48 @@ void freeGeometry(struct Geometry* object);
 
 struct Geometry
 {
-    ;
+    char type[40];
+    float arg[4];
 };
 
+void initRectangle(struct Geometry **object)
+{
+    scanf(SCANF_FMT_RECTANGLE,&((*object)->arg[0]),&((*object)->arg[1]),&((*object)->arg[2]),&((*object)->arg[3]));
+    printf(PRINTF_FMT_RECTANGLE,(*object)->arg[0],(*object)->arg[1],(*object)->arg[2],(*object)->arg[3]);
+    
+}
+
+
+
+void initSquare(struct Geometry **object)
+{
+    scanf(SCANF_FMT_SQUARE,&((*object)->arg[0]),&((*object)->arg[1]),&((*object)->arg[2]));
+    printf(PRINTF_FMT_SQUARE,(*object)->arg[0],(*object)->arg[1],(*object)->arg[2]);
+}
+
+
+
+
+void initCircle(struct Geometry **object)
+{
+    scanf(SCANF_FMT_CIRCLE,&((*object)->arg[0]),&((*object)->arg[1]),&((*object)->arg[2]));
+    printf(PRINTF_FMT_CIRCLE,(*object)->arg[0],(*object)->arg[1],(*object)->arg[2]);
+}
+
+
+
+
+
+void initLine(struct Geometry **object)
+{
+    scanf(SCANF_FMT_LINE,&((*object)->arg[0]),&((*object)->arg[1]),&((*object)->arg[2]),&((*object)->arg[2]));
+    printf(PRINTF_FMT_LINE,(*object)->arg[0],(*object)->arg[1],(*object)->arg[2],((*object)->arg[2]));
+}
+
+void freeGeometry(struct Geometry* object)
+{
+    free(object);
+}
 
 int main()
 {
