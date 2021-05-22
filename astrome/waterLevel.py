@@ -1,7 +1,7 @@
 import snoop
 import loguru
 @loguru.logger.catch()
-def getMinNeighbour(arr,coveredCells):
+def getMinNeighbour(arr,waterLevel,coveredCells):
     
     for x,y in coveredCells:
         neighbours=[[x-1,y],[x+1,y],[x,y-1],[x,y+1]]
@@ -38,11 +38,14 @@ def main():
 
     coveredCells=[[int(matrixSize/2),int(matrixSize/2)]]
     out[coveredCells[0][0]][coveredCells[0][1]]='W'
+    waterLevel=arr[coveredCells[0][0]][coveredCells[0][1]]
     while(True):
         printMatrix(out)
-        ret=getMinNeighbour(arr,coveredCells)      
+        ret=getMinNeighbour(arr,waterLevel,coveredCells)      
         out[ret[0]][ret[1]]='W'
+        newLevel=arr[ret[0]][ret[1]]
         if((not (ret[0] in [0,matrixSize-1])) and (not (ret[1] in [0,matrixSize-1])) ):
+            if(waterLevel<newLevel): waterLevel=newLevel
             coveredCells.append(ret)
         else:break
 
