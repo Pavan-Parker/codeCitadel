@@ -45,6 +45,6 @@ def main():
         else:break
 
     for line in out:
-        print()
+        
 if __name__ == "__main__":
     main()
