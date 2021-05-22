@@ -9,15 +9,16 @@ def getMinNeighbour(arr,waterLevel,coveredCells):
         for index in neighbours:
             if((index not in coveredCells)):
                 neighboursAll[index]=arr[index[0]][index[1]]
+                if(("minIndex" not in locals()) or (arr[index[0]][index[1]]<=arr[minIndex[0]][minIndex[1]])):
+                    minIndex=index
+
     
     neighboursAllSorted = {k: v for k, v in sorted(neighboursAll.items(), key=lambda x: x[1])}
-    
-    while(True):
-        if()
-    if(("minIndex" not in locals()) or (arr[index[0]][index[1]]<=arr[minIndex[0]][minIndex[1]])):
-    minIndex=index
-    minIndices.append(index)
-    return minIndex
+
+    for k,v in neighboursAll.items():
+        if(v<=waterLevel): minIndices.append(k)
+        else:break
+    return minIndices
 def makeTile(value,size):
     out=[]
     for i in range(size):
