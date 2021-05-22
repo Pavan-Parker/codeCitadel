@@ -10,17 +10,23 @@ def getMinNeighbour(arr,currentCell):
     except IndexError as error:
         print("hault")
         return None
+def makeTile(value,size):
+    retMat=[]
+    row=[value]*size
+    for i in range(size): retMat.append(row)
+    return retMat
 def main():
     matrixSize=int(input())
-    arr=np.zeros((matrixSize,matrixSize))
-    out=np.tile('.',(matrixSize,matrixSize))
+    arr=makeTile(0,matrixSize)
+    out=makeTile('.',matrixSize)
+
     for i in range(matrixSize):
         arr[i]=list(map( int ,input().split()))
     currentCell=[int(matrixSize/2),int(matrixSize/2)]
     while(True):
-        out[tuple(currentCell)]='W'
+        out[currentCell[0]][currentCell[1]]='W'
         ret=getMinNeighbour(arr,currentCell)
-        if(not np.isnan(ret).all()):
+        if(ret is not None):
             currentCell=ret
         else:break
     print(out)
