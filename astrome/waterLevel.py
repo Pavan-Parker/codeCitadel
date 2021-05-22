@@ -2,14 +2,21 @@ import snoop
 import loguru
 @loguru.logger.catch()
 def getMinNeighbour(arr,waterLevel,coveredCells):
-    
+    minIndices=[]
+    neighboursAll={}
     for x,y in coveredCells:
         neighbours=[[x-1,y],[x+1,y],[x,y-1],[x,y+1]]
-                               
         for index in neighbours:
             if((index not in coveredCells)):
-                if(("minIndex" not in locals()) or (arr[index[0]][index[1]]<=arr[minIndex[0]][minIndex[1]])):
-                    minIndex=index
+                neighboursAll[index]=arr[index[0]][index[1]]
+    
+    neighboursAllSorted = {k: v for k, v in sorted(neighboursAll.items(), key=lambda x: x[1])}
+    
+    while(True):
+        if()
+    if(("minIndex" not in locals()) or (arr[index[0]][index[1]]<=arr[minIndex[0]][minIndex[1]])):
+    minIndex=index
+    minIndices.append(index)
     return minIndex
 def makeTile(value,size):
     out=[]
