@@ -2,12 +2,11 @@ import snoop
 import loguru
 @loguru.logger.catch()
 def getMinNeighbour(arr,coveredCells):
+    
     for x,y in coveredCells:
         neighbours=[[x-1,y],[x+1,y],[x,y-1],[x,y+1]]
-        # index=neighbours.index(min(neighbours))
-        minIndex=neighbours[0]
-        for index in neighbours:
-            if((arr[index[0]][index[1]]<=arr[minIndex[0]][minIndex[1]]) and (index not in coveredCells)):
+        if('minIndex' not in locals()):
+            minIndex=neighbours[0]  if((arr[index[0]][index[1]]<=arr[minIndex[0]][minIndex[1]]) and (index not in coveredCells)):
                 minIndex=index
     return minIndex
 def makeTile(value,size):
@@ -25,7 +24,7 @@ def printMatrix(out):
             row+=char 
         print(row)
     print("\n")
-# @snoop
+@snoop
 def main():
     matrixSize=int(input())
     arr=makeTile(0,matrixSize)
@@ -38,13 +37,10 @@ def main():
     out[coveredCells[0][0]][coveredCells[0][1]]='W'
     while(True):
         printMatrix(out)
-
-
-        ret=getMinNeighbour(arr,currentCell,coveredCells)      
+        ret=getMinNeighbour(arr,coveredCells)      
         out[ret[0]][ret[1]]='W'
         if((not (ret[0] in [0,matrixSize-1])) and (not (ret[1] in [0,matrixSize-1])) ):
-            coveredCells.append(currentCell)
-            currentCell=ret
+            coveredCells.append(ret)
         else:break
 
     printMatrix(out)
