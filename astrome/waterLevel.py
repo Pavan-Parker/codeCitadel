@@ -1,8 +1,8 @@
 import numpy as np
 
 def getMinNeighbour(arr,currentCell):
-    np.argwhere arr[tuple()]    
-
+    arr=np.array(arr)
+    
     
 
 def main():
@@ -12,6 +12,6 @@ def main():
         arr[i]=list(map( int ,input().split()))
     currentCell=[int(matrixSize/2),int(matrixSize/2)]
     while(True):
-        pass
+        getMinNeighbour(arr,currentCell)
 if __name__ == "__main__":
     main()
