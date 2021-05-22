@@ -5,9 +5,11 @@ def getMinNeighbour(arr,coveredCells):
     
     for x,y in coveredCells:
         neighbours=[[x-1,y],[x+1,y],[x,y-1],[x,y+1]]
-        if('minIndex' not in locals()):
-            minIndex=neighbours[0]  if((arr[index[0]][index[1]]<=arr[minIndex[0]][minIndex[1]]) and (index not in coveredCells)):
-                minIndex=index
+                               
+        for index in neighbours:
+            if((index not in coveredCells)):
+                if(("minIndex" not in locals()) or (arr[index[0]][index[1]]<=arr[minIndex[0]][minIndex[1]])):
+                    minIndex=index
     return minIndex
 def makeTile(value,size):
     out=[]
@@ -24,7 +26,8 @@ def printMatrix(out):
             row+=char 
         print(row)
     print("\n")
-@snoop
+
+# @snoop
 def main():
     matrixSize=int(input())
     arr=makeTile(0,matrixSize)
