@@ -1,12 +1,17 @@
 import numpy as np
 
-matrixSize=int(input())
-arr=np.zeros((matrixSize,matrixSize))
+def getMinNeighbour(arr,currentCell):
+    np.argwhere arr[tuple()]    
 
-for i in range(matrixSize):
-    arr[i]=list(map( int ,input().split()))
-
-currentCell=[int(matrixSize/2),int(matrixSize/2)]
-while(True):
     
-    arr[currentCell]
+
+def main():
+    matrixSize=int(input())
+    arr=np.zeros((matrixSize,matrixSize))
+    for i in range(matrixSize):
+        arr[i]=list(map( int ,input().split()))
+    currentCell=[int(matrixSize/2),int(matrixSize/2)]
+    while(True):
+        pass
+if __name__ == "__main__":
+    main()
