@@ -2,15 +2,14 @@ import snoop
 import loguru
 @loguru.logger.catch()
 def getMinNeighbour(arr,currentCell,coveredCells):
-    try:
-        x,y=currentCell
-        neighbours=[[x-1,y],[x+1,y],[x,y-1],[x,y+1]]
-        # index=neighbours.index(min(neighbours))
-        minIndex=neighbours[0]
-        for index in neighbours:
-            if((arr[index[0]][index[1]]<=arr[minIndex[0]][minIndex[1]]) and (index not in coveredCells)):
-                minIndex=index
-        return minIndex
+    x,y=currentCell
+    neighbours=[[x-1,y],[x+1,y],[x,y-1],[x,y+1]]
+    # index=neighbours.index(min(neighbours))
+    minIndex=neighbours[0]
+    for index in neighbours:
+        if((arr[index[0]][index[1]]<=arr[minIndex[0]][minIndex[1]]) and (index not in coveredCells)):
+            minIndex=index
+    return minIndex
 def makeTile(value,size):
     out=[]
     for i in range(size):
@@ -46,6 +45,6 @@ def main():
         else:break
 
     for line in out:
-        print(*line)
+        print()
 if __name__ == "__main__":
     main()
