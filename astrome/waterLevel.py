@@ -6,20 +6,19 @@ def getMinNeighbour(arr,currentCell,coveredCells):
         x,y=currentCell
         neighbours=[[x-1,y],[x+1,y],[x,y-1],[x,y+1]]
         # index=neighbours.index(min(neighbours))
-        minIndex=[-1,-1]
+        minIndex=neighbours[0]
         for index in neighbours:
             if((arr[index[0]][index[1]]<=arr[minIndex[0]][minIndex[1]]) and (index not in coveredCells)):
                 minIndex=index
         return minIndex
-
-    except IndexError as error:
-        print("hault")
-        return None
 def makeTile(value,size):
-    retMat=[]
-    row=[value]*size
-    for i in range(size): retMat.append(row)
-    return retMat
+    out=[]
+    for i in range(size):
+        row=[]
+        for j in range(size):
+            row.append(value)
+        out.append(row)
+    return out
 
 # @snoop
 def main():
@@ -32,14 +31,21 @@ def main():
 
     currentCell=[int(matrixSize/2),int(matrixSize/2)]
     coveredCells=[]
+    out[currentCell[0]][currentCell[1]]='W'
+    
     while(True):
-        print(out)
-        out[currentCell[0]][currentCell[1]]='W'
+        for line in out:
+            print(*line)
+        print("\n")
         ret=getMinNeighbour(arr,currentCell,coveredCells)
-        if(ret is not None):
+        
+        out[ret[0]][ret[1]]='W'
+        if((not (ret[0] in [0,matrixSize-1])) and (not (ret[1] in [0,matrixSize-1])) ):
             coveredCells.append(currentCell)
             currentCell=ret
         else:break
-    print(out)
+
+    for line in out:
+        print(*line)
 if __name__ == "__main__":
     main()
