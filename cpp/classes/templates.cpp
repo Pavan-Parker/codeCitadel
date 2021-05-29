@@ -45,6 +45,7 @@ void swapIt(T& a,T& b)
     b=temp;
 }
 
+//?Template specializtion
 template<>
 void swapIt<char>(char& a, char& b)
 {
@@ -52,6 +53,20 @@ void swapIt<char>(char& a, char& b)
     char temp=a;
     a=b;
     b=temp;
+}
+
+void division(int a, int b)
+{
+    try
+    {
+        if(b!=0){cout<<((double)a)/b<<endl;}
+        else{throw 0;}
+    }
+    catch(...)
+    {
+        cout<<"caught it"<<endl;
+    }
+    
 }
 
 int main()
@@ -88,11 +103,24 @@ int main()
     auto square = [](const int& i){return i*i;};
     cout<<"The square of 5 is "<<square(5)<<endl;
 
+
     vector<int> vec={1,2,3,4,5};
     for_each(vec.begin(),vec.end(),[](int& i){return i+=5;});
-    for(const auto& i:vec)
+    for(const auto& i:vec){cout<<i<<", "<<endl;}
+    cout<<lineBreak<<endl;
+
+    //! new()
+    int* p= new int[3]{20,210,120};
+    for(auto i :{1,2,3})
     {
-        cout<<i<<", "<<endl;
+        cout<<*p<<endl;
+        p++;
     }
+    cout<<lineBreak<<endl;
+
+    //!Exception Handling
+    division(1,1);
+    division(1,0);
+
     return 0;
 }
