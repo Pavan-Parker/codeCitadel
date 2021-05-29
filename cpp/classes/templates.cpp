@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-template <typename T>
+template <class T>
 T addIt (T a,T b)
 {
     return a+b;
@@ -9,8 +9,8 @@ T addIt (T a,T b)
 
 int main()
 {
-    cout<<addIt<int>(1.0,2.0)<<endl;
-    cout<<addIt<float>(1.0,2.0)<<endl;
-    cout<<addIt<char>('c','c')<<endl;
+    cout<<addIt(1.0,2.0)<<endl;
+    cout<<addIt(1.0,2.0)<<endl;
+    cout<<addIt('c','c')<<endl;
     
 }
