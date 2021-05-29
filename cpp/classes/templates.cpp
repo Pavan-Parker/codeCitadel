@@ -11,6 +11,6 @@ int main()
 {
     cout<<addIt<int>(1.0,2.0)<<endl;
     cout<<addIt<float>(1.0,2.0)<<endl;
-    cout<<addIt<char>(1.0,2.0)<<endl;
+    cout<<addIt<char>('c','c')<<endl;
     
 }
