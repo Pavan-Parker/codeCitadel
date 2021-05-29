@@ -61,17 +61,17 @@ void division(int a, int b)
 {
     try
     {
-
-        // cout<<a/b<<endl;
         if(b!=0){throw ((double)a)/b;}
         else{throw runtime_error("Math Error: Divide by zero");}
     }
+
     catch(double& x)
     {   
         cout<<"caught it"<<endl;
         cout<<x<<endl;
     }
-    catch(runtime_error& x)
+
+    catch(runtime_error x)
     {
         cout<<"caught it"<<endl;
         cout<<x.what()<<endl;
@@ -131,6 +131,7 @@ int main()
     //!Exception Handling
     division(1,1);
     division(1,0);
+    cout<<lineBreak<<endl;
 
     return 0;
 }
