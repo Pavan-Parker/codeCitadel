@@ -1,19 +1,31 @@
-/**
+/** 
+ * * Overloading vs Overriding
  * ! Overloading = behaviour depends on the type of args
  * ! Overriding = Overriding :)
  * ! derived class overrides the function only if base class's function is virtual.
- * ! 
-    /**
-    *   If we remove & in below function, a new
-     copy of the student object is created.
-    We use const to avoid accidental updates
-    in the function as the purpose of the function
-    is to print s only.
-void print(const Student &s)
-
 */
 
+/**
+ * * THIS
+ * ! this is pointer to itself.
+ * ! so to assign the variables with same name in class, use this.var=var; 
+*/
 
+/**
+ * * constant reference significance
+ * ? void print(const Student &s)
+ * ! If we remove & in below function, a new
+ * ! copy of the student object is created.
+ * ! We use const to avoid accidental updates
+ * ! in the function as the purpose of the function
+ * ! is to print s only.
+*/
+
+/**
+ * * Inline
+ * ! replaces the functional call with body of the code
+ * ! it saves functional call overhead for small function which are frequently used.
+*/
 
 
 #include <bits/stdc++.h>
@@ -27,51 +39,53 @@ class hmm
         int var;
     private:
         int privateVar=1;
-    public: //Access modifier
+    public: // ? Access modifier
         
-        //default constructor
+        //?default constructor
         hmm(){
             cout << "default constructor"<< endl;
             this->var=1;
         }
         
-        //parameterized constructor
-        hmm(int varGiven) : var(varGiven)   {}//initializer lists for inplace assignments
+        //?parameterized constructor
+        hmm(int varGiven) : var(varGiven)   {}//?initializer lists for inplace assignments
         
-        //Copy constructor
+        //?Copy constructor
         hmm(hmm& hmmGiven) : var(hmmGiven.var)  {}
 
-        //Destructor, better for closing files or releasing allocated memories
+        //?Destructor, better for closing files or releasing allocated memories
         ~hmm()
         {
             cout<<"destructor for hmm is called"<<endl;
         }
         
-        void whoIsThis()
+        void whoIsThis() // ! to check the overriding
         {
             cout<<"this is class hmm Base speaking"<<endl;
         }
 
-        void printVar();
+        void printVar(); // ! to demo the encapsulation and data hiding
 
-        //friend Class
+        //?friend Class
         friend class friendHmm;
 
-        //friend function
+        //?friend function
         friend void friendHmmFunction(hmm&);
         
-        //operator overloading
+        //! add operator overloading
         hmm operator + (hmm& another)
         {
             return (hmm)(var+another.var);
         }
 
+        //! cout operator overloading
         friend ostream &operator<<(ostream &output, hmm& x)
         {
             output<<x.var;
             return output;
         }
 
+        //! cin operator overloading
         friend istream &operator>>(istream &input,hmm& x)
         {
             input>>x.var;
@@ -80,7 +94,7 @@ class hmm
 
 };
 
-void hmm::printVar()    // out of class defination
+void hmm::printVar()    //! out of class defination
 {
     cout<<hmm::var<<endl;
 }
