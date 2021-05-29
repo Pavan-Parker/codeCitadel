@@ -41,6 +41,25 @@ class hmm
 
         //friend function
         friend void friendHmmFunction(hmm&);
+        
+        //operator overloading
+        hmm operator + (hmm& another)
+        {
+            return (hmm)(var+another.var);
+        }
+
+        friend ostream &operator<<(ostream &output, hmm& x)
+        {
+            output<<x.var;
+            return output;
+        }
+
+        friend istream &operator>>(istream &input,hmm& x)
+        {
+            input>>x.var;
+            return input;
+        }
+
 };
 
 void hmm::printVar()    // out of class defination
@@ -96,13 +115,13 @@ int main()
     cout<<lineBreak<<endl;
     cout<<":Constructors:"<<endl;
     hmm obj1;
-    obj1.printVar();
+    cout<<obj1<<endl;
 
     hmm obj2(2);
-    obj2.printVar();
+    cout<<obj2;
     
     hmm obj1Copy=obj1;
-    obj1Copy.printVar();
+    cout<<obj1Copy;
     
     cout<<lineBreak<<endl;
     cout<<":Diamond problem without ambiguity:"<<endl;
@@ -123,7 +142,12 @@ int main()
         
     friendHmm objFriend(obj1);
     friendHmmFunction(obj1);
-        
+
+    cout<<lineBreak<<endl;
+    cout<<":Operator Overloading:"<<endl;
+    hmm objAdd=(obj1+obj2);
+    cout<<objAdd<<endl;
+
     cout<<lineBreak<<endl;
     cout<<":Destructors:"<<endl;
     
