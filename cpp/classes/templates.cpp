@@ -1,4 +1,7 @@
 #include <iostream>
+#include <vector>
+#include <numeric>
+
 using namespace std;
 
 #define lineBreak "++++++++++++++++++++++++++++++"
@@ -63,19 +66,31 @@ int main()
     char aChar='0',bChar='1';
     swapIt(aChar,bChar);
     cout<<"now a is "<<aChar<< ", b is "<<bChar<<" and their sum is "<<addIt<char>(aChar,bChar)<<endl;
-    
     cout<<lineBreak<<endl;
+
+
     //! functional class
     cout<<"Calculations for 5.0 and 2.0"<<endl;
     Calc<float> CalcFloat(5.0,2.0);
-
     cout<<lineBreak<<endl;
+
+
     //! string macros
     #define intoString(a) #a
     #define tokenPasting(a,b) a##b
 
     cout<<intoString(12)<<endl;
     cout<<tokenPasting(34,56)<<endl;
+    cout<<lineBreak<<endl;
+
+    //! lamda functions
+    auto square = [](const int& i){return i*i;};
+    cout<<"The square of 5 is"<<square(5)<<endl;
+
+    vector<int> vec={1,2,3,4,5};
+    cout<<foreach()
+
+
 
     return 0;
 }
