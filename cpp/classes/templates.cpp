@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+#define lineBreak "++++++++++++++++++++++++++++++"
+
 template<class T>
 class Calc
 {
@@ -29,6 +31,7 @@ T addIt (T a,T b)
     return a+b;
 }
 
+
 //?Swap using template
 template <class T>
 void swapIt(T& a,T& b)
@@ -37,8 +40,19 @@ void swapIt(T& a,T& b)
     a=b;
     b=temp;
 }
+
+template<>
+void swapIt<char>(char& a, char& b)
+{
+    cout<<"!!!You just saw a template specialization demo!!!"<<endl;
+    char temp=a;
+    a=b;
+    b=temp;
+}
+
 int main()
 {
+    cout<<lineBreak<<endl;
     //! functional template
     int aInt=1,bInt=2;
     swapIt(aInt,bInt);
@@ -49,10 +63,19 @@ int main()
     char aChar='0',bChar='1';
     swapIt(aChar,bChar);
     cout<<"now a is "<<aChar<< ", b is "<<bChar<<" and their sum is "<<addIt<char>(aChar,bChar)<<endl;
-
+    
+    cout<<lineBreak<<endl;
     //! functional class
-    cout<<"Cal"
+    cout<<"Calculations for 5.0 and 2.0"<<endl;
     Calc<float> CalcFloat(5.0,2.0);
+
+    cout<<lineBreak<<endl;
+    //! string macros
+    #define intoString(a) #a
+    #define tokenPasting(a,b) a##b
+
+    cout<<intoString(12)<<endl;
+    cout<<tokenPasting(34,56)<<endl;
 
     return 0;
 }
