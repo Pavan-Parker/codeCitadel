@@ -5,7 +5,8 @@ class hmm
 {
     protected:
         int var;
-        int privateVar;
+    private:
+        int privateVar=1;
     public: //Access modifier
         
         //default constructor
@@ -18,7 +19,7 @@ class hmm
         hmm(int varGiven) : var(varGiven)   {}//initializer lists for inplace assignments
         
         //Copy constructor
-        hmm(hmm &hmmGiven) : var(hmmGiven.var)  {}
+        hmm(hmm& hmmGiven) : var(hmmGiven.var)  {}
 
         //Destructor, better for closing files or releasing allocated memories
         ~hmm()
@@ -26,16 +27,34 @@ class hmm
             cout<<"destructor for hmm is called"<<endl;
         }
         void printVar();
-};
-class mmm
-class hmmChild:hmm
-{
-    
+
+        //friend Class
+        friend class friendHmm;
+
+        //friend function
+        friend void friendHmmFunction(hmm&);
 };
 
 void hmm::printVar()    // out of class defination
 {
     cout<<hmm::var<<endl;
+}
+
+class friendHmm
+{
+    public:
+        friendHmm(hmm& x)
+        {
+            cout<<"Now friendClass have access to privateVar in hmm which is "<< x.privateVar<<endl;
+        }
+};
+
+class hmmChild:hmm{
+};
+
+void friendHmmFunction(hmm& x)
+{
+        cout<<"Now friendHmmFunction have friend class to privateVar in hmm which is "<< x.privateVar<<endl;
 }
 
 int main()
@@ -51,6 +70,10 @@ int main()
 
     hmmChild objChild1;
     obj1Copy.printVar();
+    
+    friendHmm objFriend(obj1);
+    friendHmmFunction(obj1);
+    
     
     return 0;
 
