@@ -3,35 +3,34 @@ using namespace std;
 
 class hmm
 {
-    public: //Access modifier
-
+    protected:
         int var;
-
-        hmm()   //default constructor
-        {
+    public: //Access modifier
+        
+        //default constructor
+        hmm(){
             cout << "default constructor"<< endl;
             hmm::var=1;
         }
+        
+        //parameterized constructor
+        hmm(int varGiven) : var(varGiven)   {}//initializer lists for inplace assignments
+        
+        //Copy constructor
+        hmm(hmm &hmmGiven) : var(hmmGiven.var)  {}
 
-        hmm(int var)    //parameterized constructor
-        {
-            hmm::var=var;
-        }
-
-        hmm(hmm &hmmGiven)     //Copt constructor  
-        {
-            hmm::var=hmmGiven.var;
-        }
-
+        //Destructor, better for closing files or releasing allocated memories
         ~hmm()
         {
             cout<<"destructor for hmm is called"<<endl;
         }
-
         void printVar();
 };
 
-class hmmChild:hmm{}
+class hmmChild:hmm
+{
+    
+};
 
 void hmm::printVar()    // out of class defination
 {
@@ -49,6 +48,9 @@ int main()
     hmm obj1Copy=obj1;
     obj1Copy.printVar();
 
+    hmmChild objChild1;
+    obj1Copy.printVar();
+    
     return 0;
 
 }
