@@ -5,6 +5,7 @@ class hmm
 {
     protected:
         int var;
+        int privateVar;
     public: //Access modifier
         
         //default constructor
@@ -26,7 +27,7 @@ class hmm
         }
         void printVar();
 };
-
+class mmm
 class hmmChild:hmm
 {
     
