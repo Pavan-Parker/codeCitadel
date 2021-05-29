@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define lineBreak "================================================="
+
 class hmm
 {
     protected:
@@ -26,6 +28,12 @@ class hmm
         {
             cout<<"destructor for hmm is called"<<endl;
         }
+        
+        void whoIsThis()
+        {
+            cout<<"this is class hmm Base speaking"<<endl;
+        }
+
         void printVar();
 
         //friend Class
@@ -49,16 +57,44 @@ class friendHmm
         }
 };
 
-class hmmChild:hmm{
+class hmmChildA: virtual public hmm{
+    // public:
+    //     void whoIsThis()
+    //     {
+    //         cout<<"this is class hmmChildA speaking"<<endl;
+    //     }
+
 };
+
+class hmmChildB: virtual public hmm{
+    // public:
+    //     void whoIsThis()
+    //     {
+    //         cout<<"this is class hmmChildB speaking"<<endl;
+    //     }
+};
+
+class hmmChildAB: virtual public hmmChildA, virtual public hmmChildB{
+    // public:
+    //     void whoIsThis()
+    //     {
+    //         cout<<"this is class hmmChildAB speaking"<<endl;
+    //     }
+};
+
+
 
 void friendHmmFunction(hmm& x)
 {
         cout<<"Now friendHmmFunction have friend class to privateVar in hmm which is "<< x.privateVar<<endl;
 }
 
+
+
 int main()
 {
+    cout<<lineBreak<<endl;
+    cout<<":Constructors:"<<endl;
     hmm obj1;
     obj1.printVar();
 
@@ -67,13 +103,31 @@ int main()
     
     hmm obj1Copy=obj1;
     obj1Copy.printVar();
-
-    hmmChild objChild1;
-    obj1Copy.printVar();
     
+    cout<<lineBreak<<endl;
+    cout<<":Diamond problem without ambiguity:"<<endl;
+    
+    hmmChildA obj1ChildA;
+    obj1ChildA.whoIsThis();
+    
+
+    hmmChildB obj1ChildB;
+    obj1ChildB.whoIsThis();
+    
+
+    hmmChildAB obj1ChildAB;
+    obj1ChildAB.whoIsThis();
+
+    cout<<lineBreak<<endl;
+    cout<<":Friend Function:"<<endl;
+        
     friendHmm objFriend(obj1);
     friendHmmFunction(obj1);
+        
+    cout<<lineBreak<<endl;
+    cout<<":Destructors:"<<endl;
     
+
     
     return 0;
 
