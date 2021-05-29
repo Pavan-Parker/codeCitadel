@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <numeric>
 
 using namespace std;
@@ -85,12 +86,13 @@ int main()
 
     //! lamda functions
     auto square = [](const int& i){return i*i;};
-    cout<<"The square of 5 is"<<square(5)<<endl;
+    cout<<"The square of 5 is "<<square(5)<<endl;
 
     vector<int> vec={1,2,3,4,5};
-    cout<<foreach()
-
-
-
+    for_each(vec.begin(),vec.end(),[](int& i){return i+=5;});
+    for(const auto& i:vec)
+    {
+        cout<<i<<", "<<endl;
+    }
     return 0;
 }
