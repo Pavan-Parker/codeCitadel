@@ -1,3 +1,7 @@
+/**
+ * * static data members of a class are static across all objects of that class.
+ * * so that they can share the variable.   
+*/
 /** 
  * * Overloading vs Overriding
  * ! Overloading = behaviour depends on the type of args
@@ -133,13 +137,10 @@ class hmmChildAB: virtual public hmmChildA, virtual public hmmChildB{
     //     }
 };
 
-
-
 void friendHmmFunction(hmm& x)
 {
         cout<<"Now friendHmmFunction have friend class to privateVar in hmm which is "<< x.privateVar<<endl;
 }
-
 
 
 int main()
