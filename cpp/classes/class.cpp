@@ -1,3 +1,21 @@
+/**
+ * ! Overloading = behaviour depends on the type of args
+ * ! Overriding = Overriding :)
+ * ! derived class overrides the function only if base class's function is virtual.
+ * ! 
+    /**
+    *   If we remove & in below function, a new
+     copy of the student object is created.
+    We use const to avoid accidental updates
+    in the function as the purpose of the function
+    is to print s only.
+void print(const Student &s)
+
+*/
+
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -14,7 +32,7 @@ class hmm
         //default constructor
         hmm(){
             cout << "default constructor"<< endl;
-            hmm::var=1;
+            this->var=1;
         }
         
         //parameterized constructor
@@ -118,10 +136,10 @@ int main()
     cout<<obj1<<endl;
 
     hmm obj2(2);
-    cout<<obj2;
+    cout<<obj2<<endl;
     
     hmm obj1Copy=obj1;
-    cout<<obj1Copy;
+    cout<<obj1Copy<<endl;
     
     cout<<lineBreak<<endl;
     cout<<":Diamond problem without ambiguity:"<<endl;
