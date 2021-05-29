@@ -55,16 +55,26 @@ void swapIt<char>(char& a, char& b)
     b=temp;
 }
 
+
+//?Exception Handl
 void division(int a, int b)
 {
     try
     {
-        if(b!=0){cout<<((double)a)/b<<endl;}
-        else{throw 0;}
+
+        // cout<<a/b<<endl;
+        if(b!=0){throw ((double)a)/b;}
+        else{throw runtime_error("Math Error: Divide by zero");}
     }
-    catch(...)
+    catch(double& x)
+    {   
+        cout<<"caught it"<<endl;
+        cout<<x<<endl;
+    }
+    catch(runtime_error& x)
     {
         cout<<"caught it"<<endl;
+        cout<<x.what()<<endl;
     }
     
 }
