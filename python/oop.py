@@ -3,8 +3,10 @@ lineBreak="++++++++++++++++++"
 # ? Class declaration
 class hmm:
     # ? Class variable
-    classVar="phew"
+    classVar="thisIsClassVar"
 
+    # ? Class variable
+    __anonymous="thisIsHiddenVar"
     # ? init method
     def __init__(self,var):
         # ? instance variable
@@ -13,22 +15,24 @@ class hmm:
     def getVar(self):
         return self.var
 
-    # def setClassVar(self,var):
-    #     return self.classVar=var
+    def getClassVar(self):
+        return self.classVar
 
 if __name__=="__main__":
-    
-    print(lineBreak)
-    # ! Objects
-    
-    print("Class Vars without objects : ",hmm.classVar)
-    
-    obj=hmm(1)
-    print("Me: whats your var? ","Object: ",obj.getVar())
-    obj.classVar="oh phew"
-    print("Class Vars without objects : ",obj.classVar)
-    
     print(lineBreak)
 
+    # ! Objects
+    print("Class Vars can be changed without objects : ",hmm.classVar)    
+    
+    obj=hmm("thisIsStaticVar1")
+    objAnother=hmm("thisIsStaticVar2")
+    print("Me: whats your static var? ","Object: ",obj.getVar())
+    
+    obj.classVar="oh phew"
+    print("Class Vars without objects : ",obj.getClassVar())
+    print("Class Vars without objects : ",objAnother.getClassVar())
+    print(lineBreak)
+
+    # ! 
     print(lineBreak)
     # ! 
