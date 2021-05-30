@@ -70,7 +70,11 @@ if __name__=="__main__":
     obj.whichClass()
     objChild.whichClass()
     print(lineBreak)
- 
+
     # !! Inheritance checking
     print(("hmmChild is subclass of hmm" if  issubclass(hmmChild,hmm) else "hmmChild is not subclass of hmm"))
-    print(("objChild is instance of hmmChild" if  isinstance(obj,hmmChild) else "objChild is not instance of hmmChild"))
+    print(("obj is instance of hmm" if  isinstance(obj,hmm) else "obj is not instance of hmm"))
+    print(("objChild is instance of hmm" if  isinstance(objChild,hmm) else "objChild is not instance of hmm"))
+    print(("obj is instance of hmmChild" if  isinstance(obj,hmmChild) else "obj is not instance of hmmChild"))
+    print(("objChild is instance of hmmChild" if  isinstance(objChild,hmmChild) else "objChild is not instance of hmmChild"))
+    
