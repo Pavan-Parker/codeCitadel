@@ -18,20 +18,25 @@ class Person
 class Professor : public Person
 {
     private:
+        int cur_id;
         int publications;
     public:
-        static int cur_id;
+        static int idCount;
         Professor()
         {
-            cur_id+=1;
-        }
-        void putdata()
-        {
-            cin>>this->name>>this->age>>this->publications;
+            idCount+=1;
+            cur_id=idCount;
         }
         void getdata()
         {
-            cout<<this->name<<this->age<<this->publications<<this->cur_id<<endl;
+            cin>>this->name>>this->age>>this->publications;
+        }
+        void putdata()
+        {
+            cout<<this->name<<" ";
+            cout<<this->age<<" ";
+            cout<<this->publications<<" ";
+            cout<<this->cur_id<<endl;
         }
         
 };
@@ -39,29 +44,36 @@ class Professor : public Person
 class Student : public Person
 {
     private:
+        int cur_id;        
         vector<int> marks={0,0,0,0,0,0};
+        
     public:
-        static int cur_id;
+        static int idCount;
         Student()
         {
-            cur_id+=1;
+            idCount+=1;
+            cur_id=idCount;
+
         }
-        void putdata()
+        void getdata()
         {
             cin>>this->name>>this->age;
             for(auto& itr : marks){cin >> itr;}
         }
-        void getdata()
+        void putdata()
         {
-            cout<<this->name<<this->age;
-            for(const auto& itr : marks){cout<<itr;}
+            cout<<this->name<<" ";
+            cout<<this->age<<" ";
+            int sum=0;
+            for(const auto& itr:marks){sum+=itr;}
+            cout<<sum<<" ";
             cout<<this->cur_id<<endl;
         }
         
 };
 
-int Professor::cur_id=0;
-int Student::cur_id=0;
+int Professor::idCount=0;
+int Student::idCount=0;
 
 int main(){
 
