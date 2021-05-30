@@ -11,8 +11,8 @@ class Person
         int age;
         string name;
     public:
-        virtual void putdata();
-        virtual void getdata();
+        virtual void putdata(){}
+        virtual void getdata(){}
 };
 
 class Professor : public Person
@@ -31,7 +31,7 @@ class Professor : public Person
         }
         void getdata()
         {
-            cout<<this->name<<this->age<<this->publications<<this->cur_id;
+            cout<<this->name<<this->age<<this->publications<<this->cur_id<<endl;
         }
         
 };
@@ -39,7 +39,7 @@ class Professor : public Person
 class Student : public Person
 {
     private:
-        vector<int> marks[6];
+        vector<int> marks={0,0,0,0,0,0};
     public:
         static int cur_id;
         Student()
@@ -49,14 +49,19 @@ class Student : public Person
         void putdata()
         {
             cin>>this->name>>this->age;
-            for(auto itr:marks){cin>>itr;}
+            for(auto& itr : marks){cin >> itr;}
         }
         void getdata()
         {
-            cout<<this->name<<this->age<<this->publications<<this->cur_id;
+            cout<<this->name<<this->age;
+            for(const auto& itr : marks){cout<<itr;}
+            cout<<this->cur_id<<endl;
         }
         
 };
+
+int Professor::cur_id=0;
+int Student::cur_id=0;
 
 int main(){
 
