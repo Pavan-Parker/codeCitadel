@@ -53,11 +53,11 @@ if __name__=="__main__":
 #! Objects
 
 
-    #!! Class Varibles
+    #!! Class Varibles are shared by objects
     hmm.classVar="InitialClassVar"
     print("Class Vars can be changed as a Class attribute : ",hmm.classVar)    
 
-    #!! Instance Varibles
+    #!! Instance Varibles are dedicated only for the objects, but are not shared between.
     obj=hmm("thisIsInstanceVar1")
     objAnother=hmm("thisIsInstanceVar2")
     print("Me: whats your Instance var? ","Object1: ",obj.getVar())
