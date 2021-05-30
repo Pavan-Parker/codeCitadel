@@ -10,6 +10,7 @@ class hmm:
     # ? init method
     def __init__(self,var):
         # ? instance variable
+        print("constructor in hmm called")
         self.var=var
 
     def getVar(self):
@@ -32,6 +33,19 @@ class hmmChild(hmm):
 
     def whichClass(self):
         print("hmm child Class")
+
+# ? Another Class declaration
+class anotherHmm():
+    def __init__(self,x):
+        print("constructor in AnotherHmm called")        
+
+# ? Multiple Class Inheritance declaration
+class hybridHmm(hmm,anotherHmm):
+    def __init__(self,x):
+
+        # ? Multiple constructors
+        hmm.__init__(self,x)
+        anotherHmm.__init__(self,x)
 
 if __name__=="__main__":
     print(lineBreak)
@@ -77,4 +91,8 @@ if __name__=="__main__":
     print(("objChild is instance of hmm" if  isinstance(objChild,hmm) else "objChild is not instance of hmm"))
     print(("obj is instance of hmmChild" if  isinstance(obj,hmmChild) else "obj is not instance of hmmChild"))
     print(("objChild is instance of hmmChild" if  isinstance(objChild,hmmChild) else "objChild is not instance of hmmChild"))
-    
+    print(lineBreak)
+
+    # !! Multiple Inheritance
+
+    hybridObj=hybridHmm("")
