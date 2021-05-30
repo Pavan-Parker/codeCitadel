@@ -11,7 +11,7 @@ class BadLengthException
         {
             len=x;
         }
-        what()
+        int what()
         {
             return len;
         }
