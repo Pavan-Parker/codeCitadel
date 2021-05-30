@@ -36,7 +36,7 @@ class hmmChild(hmm):
 if __name__=="__main__":
     print(lineBreak)
 
-    #! Objects
+#! Objects
 
 
     #!! Class Varibles
@@ -63,10 +63,14 @@ if __name__=="__main__":
     print(obj)
     print(lineBreak)
  
-    # ! Inheritance and functional overriding
+# ! Inheritance
+    
+    #!! functional overriding
     objChild=hmmChild("ThisIsChildInstanceVar")
     obj.whichClass()
     objChild.whichClass()
     print(lineBreak)
  
     # !! Inheritance checking
+    print(("hmmChild is subclass of hmm" if  issubclass(hmmChild,hmm) else "hmmChild is not subclass of hmm"))
+    print(("objChild is instance of hmmChild" if  isinstance(obj,hmmChild) else "objChild is not instance of hmmChild"))
