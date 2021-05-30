@@ -33,10 +33,25 @@ int main() {
 	while(T--) {
 		long long A, B;
 		cin >> A >> B;
-        catch(std::invalid_argument& e)
-        {
-            cout<<"Exception: "<<e;
+        Server sv;
+        try{
+            cout<<sv.compute(A,B)<<endl;            
         }
+
+        catch(std::invalid_argument& e){
+            cout<<"Exception: "<<e.what()<<endl;
+        }
+        catch(std::bad_alloc& x){
+            cout<<"Not enough memory"<<endl;
+        }
+        catch(std::exception& e){
+            cout<<"Exception: "<<e.what()<<endl;
+        }
+
+        catch(...){
+            cout<<"Other Exception"<<endl;
+        }
+
 	}
 	cout << Server::getLoad() << endl;
 	return 0;
