@@ -18,21 +18,55 @@ class hmm:
     def getClassVar(self):
         return self.classVar
 
+    def setHiddenVar(self,var):
+        self.__anonymous=var
+
+    def whichClass(self):
+        print("hmm parent Class")
+
+    def __repr__(self):
+        return f"__repr__ says: __hiddenVar is {self.__anonymous} "
+
+# ? Subclass declaration
+class hmmChild(hmm):
+
+    def whichClass(self):
+        print("hmm child Class")
+
 if __name__=="__main__":
     print(lineBreak)
 
-    # ! Objects
-    print("Class Vars can be changed without objects : ",hmm.classVar)    
+    #! Objects
+
+
+    #!! Class Varibles
+    hmm.classVar="InitialClassVar"
+    print("Class Vars can be changed as a Class attribute : ",hmm.classVar)    
+
+    #!! Instance Varibles
+    obj=hmm("thisIsInstanceVar1")
+    objAnother=hmm("thisIsInstanceVar2")
+    print("Me: whats your Instance var? ","Object1: ",obj.getVar())
+    print("Me: whats your Instance var? ","Object2: ",objAnother.getVar())
     
-    obj=hmm("thisIsStaticVar1")
-    objAnother=hmm("thisIsStaticVar2")
-    print("Me: whats your static var? ","Object: ",obj.getVar())
-    
-    obj.classVar="oh phew"
-    print("Class Vars without objects : ",obj.getClassVar())
-    print("Class Vars without objects : ",objAnother.getClassVar())
+    #!!  Shadowing class variables
+    obj.classVar="NewClassVar"
+    print("Class Vars for obj1 : ",obj.getClassVar())
+    print("Class Vars for obj2 : ",objAnother.getClassVar())
+
+    hmm.classVar="AnotherClassVar"
+    print("Class Var for obj1 : ",obj.getClassVar())
+    print("Class Vars for obj2 : ",objAnother.getClassVar())
     print(lineBreak)
 
-    # ! 
+    # !! Hidden Vars and __repr__  
+    print(obj)
     print(lineBreak)
-    # ! 
+ 
+    # ! Inheritance and functional overriding
+    objChild=hmmChild("ThisIsChildInstanceVar")
+    obj.whichClass()
+    objChild.whichClass()
+    print(lineBreak)
+ 
+    # !! Inheritance checking
