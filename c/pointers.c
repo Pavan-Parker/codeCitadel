@@ -1,5 +1,11 @@
 #include<stdio.h>
 #define linebreak() printf("+++++++++++++++++++++++++++++\n")
+
+void increment(int*  x)
+{
+    (*x)++;
+}
+
 int main()
 {
     linebreak();
@@ -16,8 +22,13 @@ int main()
     printf("ptrChar+1 at %d is %d\n",ptrChar+1,*(ptrChar+1));
     printf("ptrChar+2 at %d is %d\n",ptrChar+2,*(ptrChar+2));
     printf("ptrChar+3 at %d is %d\n",ptrChar+3,*(ptrChar+3));
+    linebreak();
 
-    // ? ptrChar stepsize is 1 Byte. ? //
+// ! ptr as function arguments. ! //
+
+    increment(ptr);
+    printf("ptr at %d is %d\n",ptr,*ptr);
+
 
     return 0;
 }
