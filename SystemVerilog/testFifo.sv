@@ -10,13 +10,13 @@ module tb_fifo ();
     logic  CLK;        // CLOCK SIGNAL
 
     /*Slave ports of tb*/
-    logic [WIDTH-1:0] M_TData;    // Transmission Data
+    logic [0:WIDTH-1] M_TData;    // Transmission Data
     logic             M_TValid;   // Master ready
     logic             M_TLast;    // Last byte of packet
     logic             M_TReady;   // Slave ready
 
     /*Master ports of tb*/
-    logic [WIDTH-1:0] S_TData;    // Transmission Data
+    logic [0:WIDTH-1] S_TData;    // Transmission Data
     logic             S_TValid;   // Master ready
     logic             S_TLast;    // Last byte of packet
     logic             S_TReady;   // Slave ready
@@ -29,7 +29,7 @@ module tb_fifo ();
 /*Reset and Flush the fifo*/
     
     logic Reset;
-    logic temp=DEPTH;
+  logic [0:$clog2(DEPTH)-1]temp=DEPTH;
     logic START=0;
 
 
@@ -71,10 +71,10 @@ always begin : clockGenerator
     #(CLK_PERIOD/2) CLK=~CLK;
 end
 
-initial begin
-    $dumpfile("tb_fifo.vcd");
-    $dumpvars(0, tb_fifo);
-end
+// initial begin
+//     $dumpfile("tb_fifo.vcd");
+//     $dumpvars(0, tb_fifo);
+// end
 
 initial begin
     CLK<=0;
@@ -84,16 +84,19 @@ initial begin
     #(CLK_PERIOD) Reset<=0;
     // START<=1;
 end
+//  initial begin
+//    #100 $finish();
+//  end
 
 always_ff @(posedge CLK) begin
 
-  if(isFull) begin : CompletionCheck
+    if(isFull) begin : CompletionCheck
         $finish;
     end : CompletionCheck
 
-  	if(!Reset &&temp) begin : SENDING
+  	if(!Reset) begin : SENDING
         M_TData<=temp;
-        temp<=temp-1;
+        temp<=temp-1'b1;
     end : SENDING
     
     // if(!Reset&&temp) begin : RECEPTION
