@@ -87,7 +87,7 @@ end
 
 always_ff @(posedge CLK) begin
 
-    if(!temp) begin : CompletionCheck
+  if(isFull) begin : CompletionCheck
         $finish;
     end : CompletionCheck
 
