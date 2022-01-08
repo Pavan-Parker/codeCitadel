@@ -108,3 +108,11 @@ The image above depicts the registers in ARM Cortex-M processor.
 Stack grows from low to high address in RAM.
 > Arm Cortex-M Architecture has 32-bit `word alignment` for stack access. Which means the last 2 bits of the SP is always set to 0. To push an element, we should the decrement the SP by 4 and store the data there. likewise for pop. 
 
+As discussed above, there are two Stack Pointers's - Main Stack Pointer (MSP) used by OS code and Processor Stack Pointer (PSP) used by user software.
+
+## On Reset
+On reset,
+- SP defaults to 0 and it is of MSP.
+- PC set to 4.
+- Link Pointer (LP) set to 0xffff_ffff, which means invalid value.
+- T
