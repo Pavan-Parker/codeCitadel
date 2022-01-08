@@ -84,7 +84,7 @@ The image above depicts the registers in ARM Cortex-M processor.
 - R0-15, all are of 32-bit width.
   - Registers R0 to R12 are General Purpose registers.
   - R13 is a stack pointer points to the top of the stack.
-    - Actually, there are two stack pointers of which only one will be active at a time. One is MSP (Main Stack Pointer) used for OS code and the other is PSP (Process Stack Pointer) used for User Code. This seperation helps OS from crashing when user code crashes. 
+    - Actually, there are two stack pointers of which only one will be active at a time. One is MSP (Main Stack Pointer) used for OS code and the other is PSP (Process Stack Pointer) used for User Code. This seperation helps OS from crashing when user code crashes. And the Active Stack Pointer Selection (ASPSEL) = 0 - MSP and = 1 - PSP. 
   - R14 is a Link pointer which contains the pointer to the return location from a subroutine call.
   - R15 is a Program counter, which points to the address of the next instruction to be fetched from the memory. So that the processor fetches the address in PC and increments it.
 - PSR holds the information about flags set by the operation, like NZVC bits, Thumb bit and ISR number.
@@ -112,7 +112,7 @@ As discussed above, there are two Stack Pointers's - Main Stack Pointer (MSP) us
 
 ## On Reset
 On reset,
-- SP defaults to 0 and it is of MSP.
+- SP defaults to 0 and ASPSEL to 0 i.e. defaults to MSP.
 - PC set to location 4, which is called reset vector.
 - Link Pointer (LP) set to 0xffff_ffff, which means invalid value.
 - T bit set to 1, which means it defaults to Thumb instruction mode, not ARM mode.
