@@ -1,0 +1,33 @@
+# RTOS
+
+an RTOS needs to meet a 
+
+- certain hard deadline
+- with a given accuracy
+- and always reliable
+
+![img](https://courses.edx.org/assets/courseware/v1/7785a511982b6acd8478f10e6dbe96f1/asset-v1:UTAustinX+UT.RTBN.12.01x+3T2019+type@asset+block/Fig01_02_Embedded_Software_Hardware.jpg)
+
+In the Image above, leftmost is a hardware specific simple system. Middle one contains OS which can be used for devices by multiple vendors. This can be done using HAL (Hardware Abstraction Layers) which gives pushes all the vendor specific details under the hood to make software programmer's life easy. The right most system has more cores which gives more computing power that comes with more complex concepts like synchronization, communication and assigning tasks across the cores.
+
+> We can see that as we go from left to right, the role of OS is becoming more important.
+
+# Computer Architecture
+
+| ![image-20220107120709588](/home/blackmath/.config/Typora/typora-user-images/image-20220107120709588.png) |
+| ------------------------------------------------------------ |
+| __The above set of questions defines the architecture.__     |
+
+## ARM Cortex-M architecture 
+
+Four major components of this architecture are
+
+- BIU (Bus interface Units)
+  - BIU drives the address bus drives the bus and it’s control signals.
+  - EAR (Effective Address Register) has the memory address from the data is to be fetched from. 
+- CU (Control Unit)
+  - CU orchestrates the sequence of the operations and commands all the other 3. components.
+  - IR (Instruction Register) contains the opcode for the current instruction. For thumb-2, it maybe 16 bit or 32 bit.
+- ALU (Arithmetic Logic Unit)
+- 
+- Registers
