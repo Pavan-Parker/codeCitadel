@@ -118,4 +118,9 @@ On reset,
 - T bit set to 1, which means it defaults to Thumb instruction mode, not ARM mode.
 - Thread Previlege Level (TPL) defaults to previleged, so it'll have access to everything. 
 
-> There are 
+> ARM processor has two modes - Thread mode and Handler mode.
+> 
+> Thread mode signifies that the processor is executing the main program. ISR_NUMBER is set to 0 here.
+> 
+> Handler mode indicates that the processor is executing an ISR. All the context is saved before ISR starts. ISR uses MSP. ISR_NUMBER is set to the corresponding ISR number being served.
+> 
