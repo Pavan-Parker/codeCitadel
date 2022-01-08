@@ -117,4 +117,5 @@ On reset,
 - Link Pointer (LP) set to 0xffff_ffff, which means invalid value.
 - T bit set to 1, which means it defaults to Thumb instruction mode, not ARM mode.
 - Thread Previlege Level (TPL) defaults to previleged, so it'll have access to everything. 
-- 
+
+> There are 
