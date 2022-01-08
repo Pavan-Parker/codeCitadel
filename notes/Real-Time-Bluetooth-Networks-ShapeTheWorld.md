@@ -113,7 +113,7 @@ As discussed above, there are two Stack Pointers's - Main Stack Pointer (MSP) us
 ## On Reset
 On reset,
 - SP defaults to 0 and it is of MSP.
-- PC set to 4.
+- PC set to location 4, which is called reset vector.
 - Link Pointer (LP) set to 0xffff_ffff, which means invalid value.
 - T bit set to 1, which means it defaults to Thumb instruction mode, not ARM mode.
 - Thread Previlege Level (TPL) defaults to previleged, so it'll have access to everything. 
