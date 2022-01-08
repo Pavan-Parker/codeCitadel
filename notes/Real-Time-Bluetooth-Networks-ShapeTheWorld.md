@@ -97,8 +97,8 @@ The image above depicts the registers in ARM Cortex-M processor.
     - Q = Sticky Saturation
     - T = Thumb Instruction
     - ICI/IT = IF-THEN flags
-- if PRIMASK is set to 0, the interrupts are enabled else most are not.
-- Base Priority says the priority of the executing software. It allows only interrupts lower than this value to execute. 
+- if `PRIMASK` is set to 0, the interrupts are enabled else most are not.
+- `Base Priority` says the priority of the executing software. It allows only interrupts lower than this value to execute. 
 
 >The ARM Architecture Procedure Call Standard, AAPCS, part of the ARM Application Binary Interface (ABI), uses registers R0, R1, R2, and R3 to pass input parameters into a C function or an assembly subroutine. Also according to AAPCS we place the return parameter in Register R0. The standard requires functions to preserve the contents of R4-R11. In other words, functions save R4-R11, use R4-R11, and then restore R4-R11 before returning.
 
@@ -106,4 +106,5 @@ The image above depicts the registers in ARM Cortex-M processor.
 ![stack](https://courses.edx.org/assets/courseware/v1/b91bac073abc6ebc86b48d3aaebe5eb9/asset-v1:UTAustinX+UT.RTBN.12.01x+3T2019+type@asset+block/Fig01_09_stack.jpg)
 
 Stack grows from low to high address in RAM.
-> Arm Cortex-M Architecture has 32-bit alignment
+> Arm Cortex-M Architecture has 32-bit `word alignment` for stack access. Which means the last 2 bits of the SP is always set to 0. To push an element, we should the decrement the SP by 4 and store the data there. likewise for pop. 
+
