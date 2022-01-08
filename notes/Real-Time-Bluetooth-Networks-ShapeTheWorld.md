@@ -104,3 +104,5 @@ The image above depicts the registers in ARM Cortex-M processor.
 
 ## Stack
 ![stack](https://courses.edx.org/assets/courseware/v1/b91bac073abc6ebc86b48d3aaebe5eb9/asset-v1:UTAustinX+UT.RTBN.12.01x+3T2019+type@asset+block/Fig01_09_stack.jpg)
+
+Stack grows from low to high address in RAM 
