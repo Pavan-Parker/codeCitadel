@@ -123,4 +123,6 @@ On reset,
 > Thread mode signifies that the processor is executing the main program. ISR_NUMBER is set to 0 here.
 > 
 > Handler mode indicates that the processor is executing an ISR. All the context is saved before ISR starts. ISR uses MSP. ISR_NUMBER is set to the corresponding ISR number being served.
-> 
+
+
+## I/O
