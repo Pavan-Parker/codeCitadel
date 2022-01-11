@@ -1,4 +1,19 @@
----
+# Table Of Contents
+- [Table Of Contents](#table-of-contents)
+- [RTOS](#rtos)
+- [Computer Architecture](#computer-architecture)
+  - [Architecture Overview](#architecture-overview)
+  - [Memory](#memory)
+  - [Buses](#buses)
+  - [Registers](#registers)
+- [Stack](#stack)
+- [On Reset](#on-reset)
+- [I/O](#io)
+- [Assembly](#assembly)
+  - [Structure of an instruction](#structure-of-an-instruction)
+  - [Assembler](#assembler)
+  - [Addressing Modes](#addressing-modes)
+
 ---
 
 # RTOS
@@ -166,14 +181,22 @@ STR R1, [R0];   store value in R1 into the address R0 is holding.
 ```
 
 ## Assembler
+
 `Assembler` converts the `assembly source code` into `object code`, which has machine level instructions to be executed by the processor. All the instructions in object are half word aligned.
 
 The `listing` is a text file containing the mixture of object code and it's source code. When we `build`, all the file are compiled/assembled, but the addresses will remain relative. When the entire project is built, the addresses will be absolute. This can be flashed onto the ROM.
 
-In general, the assembler creates a  symbol table having entries of all the addresses of labels.
+In general, the assembler creates a symbol table having entries of all the addresses of labels.
 
 ## Addressing Modes
-|Mode| Example  |
-|---|---|
-|Immediate |`LDR R1, #1; constant value is loaded`|
-|Indexed |`LDR R1, [R0]; `|
+
+| Mode                 | Another Name                  | Example                                                        |
+| -------------------- | ----------------------------- | -------------------------------------------------------------- |
+| Register to Register | Register Direct               | `MOV R1, R0; copy value from R0 to R1`                         |
+| Immediate            | Literal                       | `LDR R1, #1; constant value is loaded`                         |
+| Absolute             | Memory Direct                 | `LDR R1, 0x12345; fetch value from address`                    |
+| Indexed              | Register Indirect             | `LDR R1, [R0]; fetch value from address in the register`       |
+| Indexed with offset  | Register Indirect with offset | `LDR R1,[R0,#4]; fetch value from address in the register + 4` |
+|PC relative|| `BL Incr`
+|Register List| | `PUSH {R4-R11}; Pushes register from R4 to R11 onto stack where R4 comes up in the top and R11 in the bottom of the stack.` |
+.
