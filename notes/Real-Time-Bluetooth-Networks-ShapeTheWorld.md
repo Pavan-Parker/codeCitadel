@@ -155,3 +155,7 @@ There are 4 types of I/O:
 ----------
 `Label Opcode Operands ; Comment`
 ----------
+For example;
+``` assembly
+ADD 
+```
