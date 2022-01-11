@@ -19,6 +19,8 @@
     - [Move data](#move-data)
     - [Arthematic](#arthematic)
     - [Interrupt Masking](#interrupt-masking)
+    - [Branching](#branching)
+    - [Stack operations](#stack-operations)
 
 ---
 
@@ -246,4 +248,21 @@ ID = Interrupt Disable
 ```assembly
 CPSID I              ;disable interrupts, I=1.
 CPSIE I              ;enable interrupts, I=0
+```
+
+### Branching
+
+````assembly
+B label  ;branch to label
+BX Rm    ;branch indirect to location specified by Rm
+BL label ;branch to subroutine at label ```
+````
+
+### Stack operations
+
+```assembly
+PUSH {Rn,Rm} ; push Rn and Rm onto the stack
+PUSH {Rn-Rm} ; push all registers from Rn to Rm onto the stack
+POP  {Rn,Rm} ; pop two 32-bit numbers off stack into Rn, Rm
+POP  {Rn-Rm} ; pop multiple 32-bit numbers off stack to Rn through Rm
 ```
