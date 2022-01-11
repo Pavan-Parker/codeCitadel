@@ -148,4 +148,6 @@ There are 4 types of I/O:
 - PWM (Pulse Width Modulation)
   - To apply variable power on motor devices.
 - JTAG
-  - To program and debug the microcontroller board. 
+  - To program and debug the microcontroller board.
+
+
