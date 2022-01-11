@@ -1,4 +1,5 @@
 # Table Of Contents
+
 - [Table Of Contents](#table-of-contents)
 - [RTOS](#rtos)
 - [Computer Architecture](#computer-architecture)
@@ -13,6 +14,7 @@
   - [Structure of an instruction](#structure-of-an-instruction)
   - [Assembler](#assembler)
   - [Addressing Modes](#addressing-modes)
+  - [](#)
 
 ---
 
@@ -190,13 +192,14 @@ In general, the assembler creates a symbol table having entries of all the addre
 
 ## Addressing Modes
 
-| Mode                 | Another Name                  | Example                                                        |
-| -------------------- | ----------------------------- | -------------------------------------------------------------- |
-| Register to Register | Register Direct               | `MOV R1, R0; copy value from R0 to R1`                         |
-| Immediate            | Literal                       | `MOV R1, #1; constant value is loaded`                         |
-| Absolute             | Memory Direct                 | `LDR R1, 0x12345; fetch value from address`                    |
-| Indexed              | Register Indirect             | `LDR R1, [R0]; fetch value from address in the register`       |
-| Indexed with offset  | Register Indirect with offset | `LDR R1,[R0,#4]; fetch value from address in the register + 4` |
-|PC relative|| `BL Incr`
-|Register List| | `PUSH {R4-R11}; Pushes register from R4 to R11 onto stack where R4 comes up in the top and R11 in the bottom of the stack.` |
-.
+| Mode                 | Another Name                  | Example                                                                                                                     |
+| -------------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Register to Register | Register Direct               | `MOV R1, R0; copy value from R0 to R1`                                                                                      |
+| Immediate            | Literal                       | `MOV R1, #1; constant value is loaded`                                                                                      |
+| Absolute             | Memory Direct                 | `LDR R1, 0x12345; fetch value from address`                                                                                 |
+| Indexed              | Register Indirect             | `LDR R1, [R0]; fetch value from address in the register`                                                                    |
+| Indexed with offset  | Register Indirect with offset | `LDR R1,[R0,#4]; fetch value from address in the register + 4`                                                              |
+| PC relative          |                               | `BL Incr`                                                                                                                   |
+| Register List        |                               | `PUSH {R4-R11}; Pushes register from R4 to R11 onto stack where R4 comes up in the top and R11 in the bottom of the stack.` |
+
+## 
