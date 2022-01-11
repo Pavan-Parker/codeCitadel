@@ -103,7 +103,7 @@ The image above depicts the registers in ARM Cortex-M processor.
 
 > The ARM Architecture Procedure Call Standard, AAPCS, part of the ARM Application Binary Interface (ABI), uses registers R0, R1, R2, and R3 to pass input parameters into a C function or an assembly subroutine. Also according to AAPCS we place the return parameter in Register R0. The standard requires functions to preserve the contents of R4-R11. In other words, functions save R4-R11, use R4-R11, and then restore R4-R11 before returning.
 
-## Stack
+# Stack
 
 ![stack](https://courses.edx.org/assets/courseware/v1/b91bac073abc6ebc86b48d3aaebe5eb9/asset-v1:UTAustinX+UT.RTBN.12.01x+3T2019+type@asset+block/Fig01_09_stack.jpg)
 
@@ -113,7 +113,7 @@ Stack grows from low to high address in RAM.
 
 As discussed above, there are two Stack Pointers's - Main Stack Pointer (MSP) used by OS code and Processor Stack Pointer (PSP) used by user software.
 
-## On Reset
+# On Reset
 
 On reset,
 
@@ -129,7 +129,7 @@ On reset,
 >
 > Handler mode indicates that the processor is executing an ISR. All the context is saved before ISR starts. ISR uses MSP. ISR_NUMBER is set to the corresponding ISR number being served.
 
-## I/O
+# I/O
 
 A `Pin` is an Individual wire used as input/output/power/debugging.
 A collection of `Pins` is called a `Port`.
@@ -150,4 +150,8 @@ There are 4 types of I/O:
 - JTAG
   - To program and debug the microcontroller board.
 
-
+# Assembly
+## Structure of an instruction
+----------
+`Label Opcode Operands ; Comment`
+----------
