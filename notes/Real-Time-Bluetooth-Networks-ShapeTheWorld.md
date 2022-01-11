@@ -151,14 +151,18 @@ There are 4 types of I/O:
   - To program and debug the microcontroller board.
 
 # Assembly
+
 ## Structure of an instruction
-----------
-`Label Opcode Operands ; Comment`
-----------
+
+---
+
+## `Label Opcode Operands ; Comment`
+
 For example;
-``` assembly
+
+```assembly
 LDR R0, =count; read count variable address into R0.
-LDR R1, [R0]; read value in address R0 is holding into R1.
-ADD R1, #1; increment R1 by 1.
-STR R1, [R0]; store value in R1 into the address R0 is holding.
+LDR R1, [R0];   read value in address R0 is holding into R1.
+ADD R1, #1;     increment R1 by 1.
+STR R1, [R0];   store value in R1 into the address R0 is holding.
 ```
