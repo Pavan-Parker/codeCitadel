@@ -167,4 +167,4 @@ STR R1, [R0];   store value in R1 into the address R0 is holding.
 
 `Assembler` converts the `assembly source code` into `object code`, which has machine level instructions to be executed by the processor. All the instructions in object are half word aligned.
 
-The `listing` is a text file containing the mixture of object code and it's source code. When we `build`, all the file are compiled/assembled, 
+The `listing` is a text file containing the mixture of object code and it's source code. When we `build`, all the file are compiled/assembled, but the addresses will remain relative. When the entire project is built, we get the 
