@@ -14,7 +14,11 @@
   - [Structure of an instruction](#structure-of-an-instruction)
   - [Assembler](#assembler)
   - [Addressing Modes](#addressing-modes)
-  - [](#)
+  - [Instructions needed](#instructions-needed)
+    - [Load and store](#load-and-store)
+    - [Move data](#move-data)
+    - [Arthematic](#arthematic)
+    - [Interrupt Masking](#interrupt-masking)
 
 ---
 
@@ -202,4 +206,38 @@ In general, the assembler creates a symbol table having entries of all the addre
 | PC relative          |                               | `BL Incr`                                                                                                                   |
 | Register List        |                               | `PUSH {R4-R11}; Pushes register from R4 to R11 onto stack where R4 comes up in the top and R11 in the bottom of the stack.` |
 
-## 
+## Instructions needed
+
+### Load and store
+
+```assembly
+LDR Rd, [Rn]     ; load 32-bit memory at [Rn] to Rd
+STR Rt, [Rn]     ; store Rt to 32-bit memory at [Rn]
+LDR Rd, [Rn, #n] ; load 32-bit memory at [Rn+n] to Rd
+STR Rt, [Rn, #n] ; store Rt to 32-bit memory at [Rn+n]
+```
+
+### Move data
+
+```assembly
+MOV   Rd, Rn         ;Move data from Rn to Rd
+MOV   Rd, #imm12     ;Set Rd to the constant M
+```
+
+### Arthematic
+
+```assembly
+ADD   Rd, Rn, Rm     ;Set Rd equal to Rn + Rm
+ADD   Rd, Rn, #imm12 ;Set Rd equal to Rn + M
+SUB   Rd, Rn, Rm     ;Set Rd equal to Rn - Rm
+SUB   Rd, Rn, #imm12 ;Set Rd equal to Rn - M
+```
+
+### Interrupt Masking
+
+The following two instructions will affect bit 0 of the PRIMASK register. When I=0, interrupts are postponed; when I=1, interrupts are allowed.
+
+```assembly
+CPSID I              ;disable interrupts, I=1
+CPSIE I              ;enable interrupts, I=0
+```
