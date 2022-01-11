@@ -237,7 +237,13 @@ SUB   Rd, Rn, #imm12 ;Set Rd equal to Rn - M
 
 The following two instructions will affect bit 0 of the PRIMASK register. When I=0, interrupts are postponed; when I=1, interrupts are allowed.
 
+```text
+CPS = Change Processor State
+IE = Interrupt Enable
+ID = Interrupt Disable
+```
+
 ```assembly
-CPSID I              ;disable interrupts, I=1
+CPSID I              ;disable interrupts, I=1.
 CPSIE I              ;enable interrupts, I=0
 ```
