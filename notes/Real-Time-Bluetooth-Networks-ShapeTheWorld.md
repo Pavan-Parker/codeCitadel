@@ -165,8 +165,15 @@ ADD R1, #1;     increment R1 by 1.
 STR R1, [R0];   store value in R1 into the address R0 is holding.
 ```
 
+## Assembler
 `Assembler` converts the `assembly source code` into `object code`, which has machine level instructions to be executed by the processor. All the instructions in object are half word aligned.
 
 The `listing` is a text file containing the mixture of object code and it's source code. When we `build`, all the file are compiled/assembled, but the addresses will remain relative. When the entire project is built, the addresses will be absolute. This can be flashed onto the ROM.
 
 In general, the assembler creates a  symbol table having entries of all the addresses of labels.
+
+## Addressing Modes
+|Mode| Example  |
+|---|---|
+|Immediate |`LDR R1, #1; constant value is loaded`|
+|Indexed |`LDR R1, [R0]; `|
