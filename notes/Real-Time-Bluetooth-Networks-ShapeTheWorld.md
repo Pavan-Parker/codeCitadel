@@ -287,12 +287,5 @@ As our operating system runs it will need to traverse the list. RunPt will alway
 LDR R0, =RunPt; R0 = &RunPt
 LDR R1, [R0];   R1 = *R0
 LDR R2, [R1, #4]; R2= *(R1+4)
-STR R2, [R1];
-```
-
-```assembly
-LDR R1,=RunPt ; R1 points to variable RunPt, using PC-relative
-LDR R0,[R1] ; R0= value of variable RunPt
-LDR R2,[R0,#4] ; next entry
-STR R2,[R1] ; update RunPt
+STR R2, [R0];
 ```
