@@ -13,7 +13,7 @@ public:
         unordered_map<int, int> lookup;
         vector<int> indices;
 
-        for (const int& it : numbers)
+        for (const int &it : numbers)
         {
 
             if (lookup.find(it) == lookup.end())
