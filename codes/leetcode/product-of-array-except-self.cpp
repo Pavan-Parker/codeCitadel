@@ -15,7 +15,8 @@ public:
         {
             lr.push_back(itr*lr.back());
         }
-        lr.pop_back();
-        
+        lr.end();
+
+
     }
 };
