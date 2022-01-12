@@ -9,19 +9,22 @@ class Solution
 public:
     vector<int> twoSum(vector<int> &numbers, int target)
     {
-        unordered_map<int, int> lookup;
 
-        for (auto it = numbers.begin(); it < numbers.end(); it++)
+        unordered_map<int, int> lookup;
+        vector<int> indices;
+
+        for (const int it : numbers)
         {
 
-            if (lookup.find(*it) == lookup.end())
+            if (lookup.find(it) == lookup.end())
             {
-                lookup[target - *it] = it - numbers.begin();
+                lookup[target - it] = &it - &numbers[0];
             }
             else
             {
-                return {lookup.at(*it), (int)(it - numbers.begin())};
+                indices = {lookup.at(it) + 1, (int)(&it - &numbers[0] + 1)};
             }
         }
+        return indices;
     }
 };
