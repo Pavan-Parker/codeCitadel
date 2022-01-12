@@ -10,7 +10,7 @@ public:
         vector<int> lr = {1};
         vector<int> rl = {1};
         vector<int> output;
-        for (const int itr : nums)
+        for (const int& itr : nums)
         {
             lr.push_back(itr * lr.back());
         }
