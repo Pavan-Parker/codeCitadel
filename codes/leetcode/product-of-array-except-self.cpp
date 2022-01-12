@@ -16,9 +16,9 @@ public:
         }
         lr.erase(lr.end());
 
-        for (auto itr = nums.rbegin(); itr < nums.rend(); itr++)
+        for (auto itr = nums.rbegin(); itr != nums.rend(); itr++)
         {
-            rl.insert(lr.begin(), (*itr) * (lr.front()));
+            rl.insert(rl.begin(), (*itr) * (rl.front()));
         }
         rl.erase(lr.begin());
 
