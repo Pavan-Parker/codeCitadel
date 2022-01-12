@@ -14,7 +14,7 @@ public:
         {
             lr.insert(lr.end(), (*itr) * lr.back());
         }
-        lr.erase(lr.end());
+        lr.erase(lr.end()-1);
 
         for (auto itr = nums.rbegin(); itr != nums.rend(); itr++)
         {
