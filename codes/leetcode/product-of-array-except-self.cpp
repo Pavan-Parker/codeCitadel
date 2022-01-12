@@ -1,7 +1,6 @@
 #include <iostream>
 #include <iterator>
 #include <vector>
-#include <unordered_map>
 using namespace std;
 class Solution
 {
@@ -10,13 +9,22 @@ public:
     {
         vector<int> lr = {1};
         vector<int> rl = {1};
-        
+        vector<int> 
         for (const int itr : nums)
         {
-            lr.push_back(itr*lr.back());
+            lr.push_back(itr * lr.back());
         }
-        lr.end();
+        lr.erase(lr.end());
 
+        for (auto itr = nums.rbegin(); itr < nums.rend(); itr++)
+        {
+            rl.insert(lr.begin(), (*itr) * (lr.front()));
+        }
+        rl.erase(lr.begin());
 
+        for (size_t i = 0; i < lr.size(); i++)
+        {
+
+        }
     }
 };
