@@ -10,9 +10,9 @@ public:
         vector<int> lr = {1};
         vector<int> rl = {1};
         vector<int> output;
-        for (const int& itr : nums)
+        for (auto itr = nums.begin(); itr != nums.end(); itr++)
         {
-            lr.push_back(itr * lr.back());
+            lr.insert(lr.end(), (*itr) * lr.back());
         }
         lr.erase(lr.end());
 
