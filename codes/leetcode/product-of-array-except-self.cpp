@@ -20,7 +20,7 @@ public:
         {
             rl.insert(rl.begin(), (*itr) * (rl.front()));
         }
-        rl.erase(lr.begin());
+        rl.erase(rl.begin());
 
         for (size_t i = 0; i < lr.size(); i++)
         {
