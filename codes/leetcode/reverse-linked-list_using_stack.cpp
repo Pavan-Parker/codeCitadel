@@ -1,3 +1,9 @@
+/*
+*======Psuedo Code========
+* 1. Push all the Nodes onto a stack till NULL is detected.
+* 2. Pop each of them and link to next.
+*/
+
 class Solution {
 public: 
     ListNode* reverseList(ListNode* head) {
