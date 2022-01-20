@@ -1,3 +1,14 @@
+/*
+* Psuedo-code
+* 1. Maintain two arrays.
+* 2. One goes left to right, which starts with 1 and following elements are LR(i) = LR(i-1) * input(i-1)
+* 3. Similarly, a right to left array starting with 
+*/
+
+
+
+
+
 #include <iostream>
 #include <iterator>
 #include <vector>
