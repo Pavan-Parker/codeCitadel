@@ -21,13 +21,7 @@ class Node
 {
 public:
     char val;
-    Node *next;
-
-    Node()
-    {
-        val = 'x';
-        next = nullptr;
-    }
+    Node *next = nullptr;
 };
 class LLStack
 {
