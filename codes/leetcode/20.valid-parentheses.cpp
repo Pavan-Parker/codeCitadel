@@ -80,4 +80,11 @@ public:
         return true;
     }
 };
+
+int main(int argc, const char **argv)
+{
+    Solution s;
+    cout<< s.isValid("()");<<endl;
+    return 0;
+}
 // @lc code=end
