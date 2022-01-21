@@ -39,6 +39,7 @@ public:
         newNode->val = val;
         newNode->next = head;
         head = newNode;
+        free(newNode);
     }
     char pop()
     {
