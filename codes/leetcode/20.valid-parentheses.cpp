@@ -57,7 +57,7 @@ public:
         LLStack stack;
         for (const auto ch : s)
         {
-            cout << "at: " <<ch << endl;
+            cout << "at: " << ch << endl;
             if (pair.find(ch) != pair.end())
             {
                 cout << "    It is a closed parenthesis" << endl;
@@ -72,8 +72,10 @@ public:
                 }
             }
             else
-                cout<<"Pushing "<< ch<< " onto stack"<< endl;
+            {
+                cout << "Pushing " << ch << " onto stack" << endl;
                 stack.push(ch);
+            }
         }
         return true;
     }
