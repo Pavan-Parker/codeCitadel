@@ -31,7 +31,7 @@ public:
 };
 class LLStack
 {
-    Node *head;
+    Node *head = new Node();
 
 public:
     LLStack() {}
