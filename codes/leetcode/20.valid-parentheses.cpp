@@ -29,22 +29,25 @@ class LLStack
 
 public:
     LLStack() {}
+    int size = 0;
     void push(char val)
     {
         Node *newNode = new Node();
         newNode->val = val;
         newNode->next = head;
         head = newNode;
+        size++;
     }
     char pop()
     {
         char ret = head->val;
         head = head->next;
+        size--;
         return ret;
     }
     bool isEmpty()
     {
-        return head == nullptr;
+        return !(size);
     }
 };
 class Solution
@@ -58,35 +61,16 @@ public:
         LLStack stack;
         for (const auto ch : s)
         {
-            // cout << "at: " << ch << endl;
             if (pair.find(ch) != pair.end())
             {
-                // cout << "    It is a closed parenthesis" << endl;
-                char top = stack.pop(); 
-                if (top != pair[ch])
-                {
-                    // cout << "        Mismatch!"<< top <<" is not " <<pair[ch] << endl;
+                if (stack.pop() != pair[ch])
                     return false;
-                }
-                else
-                {
-                    // cout << "        Matched and proceeding :D" << endl;
-                }
             }
             else
-            {
-                // cout << "   Pushing " << ch << " onto stack" << endl;
                 stack.push(ch);
-            }
         }
         return stack.isEmpty();
     }
 };
 
-// int main(int argc, const char **argv)
-// {
-//     Solution s;
-//     cout << s.isValid("(){}") << endl;
-//     return 0;
-// }
 // @lc code=end
