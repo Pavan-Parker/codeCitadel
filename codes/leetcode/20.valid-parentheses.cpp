@@ -37,7 +37,7 @@ public:
     LLStack() {}
     void push(char val)
     {
-        Node *newNode;
+        Node *newNode = new Node();
         newNode->val = val;
         newNode->next = head;
         head = newNode;
