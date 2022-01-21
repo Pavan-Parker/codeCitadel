@@ -58,18 +58,14 @@ public:
         for (const auto ch : s)
         {
             if (pair.find(ch) != pair.end())
+            {
                 if (stack.pop() != pair[ch])
                     return false;
-                else
-                    stack.push(ch);
+            }
+            else
+                stack.push(ch);
         }
         return true;
     }
 };
-int main()
-{
-    Solution s;
-    s.isValid("()");
-    return 0;
-}
 // @lc code=end
