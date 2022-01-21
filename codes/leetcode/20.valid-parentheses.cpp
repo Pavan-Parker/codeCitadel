@@ -59,5 +59,6 @@ public:
                     stack.push(ch);
             return true;
         }
-    };
+    }
+};
     // @lc code=end
