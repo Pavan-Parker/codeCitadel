@@ -35,7 +35,6 @@ public:
         newNode->val = val;
         newNode->next = head;
         head = newNode;
-        free(newNode);
     }
     char pop()
     {
@@ -55,24 +54,24 @@ public:
         LLStack stack;
         for (const auto ch : s)
         {
-            cout << "at: " << ch << endl;
+            // cout << "at: " << ch << endl;
             if (pair.find(ch) != pair.end())
             {
-                cout << "    It is a closed parenthesis" << endl;
+                // cout << "    It is a closed parenthesis" << endl;
                 char top = stack.pop(); 
                 if (top != pair[ch])
                 {
-                    cout << "        Mismatch!"<< top <<" is not " <<pair[ch] << endl;
+                    // cout << "        Mismatch!"<< top <<" is not " <<pair[ch] << endl;
                     return false;
                 }
                 else
                 {
-                    cout << "        Matched and proceeding :D" << endl;
+                    // cout << "        Matched and proceeding :D" << endl;
                 }
             }
             else
             {
-                cout << "   Pushing " << ch << " onto stack" << endl;
+                // cout << "   Pushing " << ch << " onto stack" << endl;
                 stack.push(ch);
             }
         }
@@ -80,10 +79,10 @@ public:
     }
 };
 
-int main(int argc, const char **argv)
-{
-    Solution s;
-    cout << s.isValid("(){}") << endl;
-    return 0;
-}
+// int main(int argc, const char **argv)
+// {
+//     Solution s;
+//     cout << s.isValid("(){}") << endl;
+//     return 0;
+// }
 // @lc code=end
