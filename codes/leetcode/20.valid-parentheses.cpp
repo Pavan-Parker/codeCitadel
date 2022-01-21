@@ -42,6 +42,10 @@ public:
         head = head->next;
         return ret;
     }
+    bool isEmpty()
+    {
+        return head == nullptr;
+    }
 };
 class Solution
 {
@@ -75,7 +79,7 @@ public:
                 stack.push(ch);
             }
         }
-        return true;
+        return stack.isEmpty();
     }
 };
 
