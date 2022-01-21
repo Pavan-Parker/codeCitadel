@@ -21,7 +21,12 @@ class Node
 {
 public:
     int val;
-    Node *next = nullptr;
+    Node *next;
+
+    Node()
+    {
+        next = nullptr;
+    }
 };
 class LLStack
 {
@@ -61,4 +66,10 @@ public:
         return true;
     }
 };
+int main()
+{
+    Solution s;
+    s.isValid("()");
+    return 0;
+}
 // @lc code=end
