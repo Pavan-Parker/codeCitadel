@@ -31,8 +31,10 @@ public:
 };
 class LLStack
 {
-public:
     Node *head;
+
+public:
+    LLStack() {}
     void push(char val)
     {
         Node *newNode;
@@ -86,7 +88,7 @@ public:
 int main(int argc, const char **argv)
 {
     Solution s;
-    cout<< s.isValid("()")<<endl;
+    cout << s.isValid("()") << endl;
     return 0;
 }
 // @lc code=end
