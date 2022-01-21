@@ -18,12 +18,16 @@ class Node
 {
 public:
     int val;
-    Node *next;
+    Node *next = nullptr;
 };
 class LLStack
 {
-public
-    push()
+public:
+    Node *head = nullptr;
+    void push(int val)
+    {
+        
+    }
 };
 class Solution
 {
