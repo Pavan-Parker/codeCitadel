@@ -20,11 +20,12 @@ using namespace std;
 class Node
 {
 public:
-    int val;
+    char val;
     Node *next;
 
     Node()
     {
+        val = -1;
         next = nullptr;
     }
 };
@@ -32,16 +33,16 @@ class LLStack
 {
 public:
     Node *head = nullptr;
-    void push(int val)
+    void push(char val)
     {
         Node *newNode;
         newNode->val = val;
         newNode->next = head;
         head = newNode;
     }
-    int pop()
+    char pop()
     {
-        int ret = head->val;
+        char ret = head->val;
         head = head->next;
         return ret;
     }
