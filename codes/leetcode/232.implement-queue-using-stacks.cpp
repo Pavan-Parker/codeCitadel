@@ -71,7 +71,12 @@
  * overall O(n) time even if one of those operations may take longer.
  * 
  */
-
+/*
+ *
+ *======Psuedo Code======
+ * 
+ * 1. 
+*/
 // @lc code=start
 class MyQueue {
 public:
