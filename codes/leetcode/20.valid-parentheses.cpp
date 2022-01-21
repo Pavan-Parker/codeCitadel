@@ -65,9 +65,10 @@ public:
             if (pair.find(ch) != pair.end())
             {
                 cout << "    It is a closed parenthesis" << endl;
-                if (stack.pop() != pair[ch])
+                char top = stack.pop(); 
+                if (top != pair[ch])
                 {
-                    cout << "        Mismatch!" << endl;
+                    cout << "        Mismatch!"<< top <<" is not " <<pair[ch] << endl;
                     return false;
                 }
                 else
@@ -77,7 +78,7 @@ public:
             }
             else
             {
-                cout << "Pushing " << ch << " onto stack" << endl;
+                cout << "   Pushing " << ch << " onto stack" << endl;
                 stack.push(ch);
             }
         }
