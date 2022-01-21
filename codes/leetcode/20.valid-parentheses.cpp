@@ -26,6 +26,13 @@ public:
     Node *head = nullptr;
     void push(int val)
     {
+        Node *newNode;
+        newNode->val = val;
+        newNode->next = head;
+        head = newNode;
+    }
+    int pop()
+    {
         
     }
 };
