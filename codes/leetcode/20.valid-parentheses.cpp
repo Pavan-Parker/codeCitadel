@@ -25,8 +25,8 @@ public:
 
     Node()
     {
-        this->val = 'x';
-        this->next = nullptr;
+        val = 'x';
+        next = nullptr;
     }
 };
 class LLStack
