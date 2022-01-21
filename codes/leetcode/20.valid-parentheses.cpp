@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 /*
  * @lc app=leetcode id=20 lang=cpp
  *
@@ -49,18 +52,12 @@ public:
         stack = new LLStack();
         for (const auto ch : s)
         {
-            if pair.find(ch) != pair.end();
-            
-            if (ch == '(' || ch == '{' || ch == '[')
-                stack.push(ch);
-            else
-            {
-                if (ch == ')')
-                    if
-                        !(stack.pop() == '(') return false;
-            }
+            if (pair.find(ch) != pair.end())
+                if (stack.pop() != pair[ch])
+                    return false;
+                else
+                    stack.push(ch);
+            return true;
         }
-        return true;
-    }
-};
-// @lc code=end
+    };
+    // @lc code=end

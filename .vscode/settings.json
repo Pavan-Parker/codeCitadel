@@ -4,7 +4,14 @@
         "**/.i3/config": "i3",
         "**/i3/config": "i3",
         "vector": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "hash_map": "cpp",
+        "*.tcc": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "string_view": "cpp",
+        "ranges": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
