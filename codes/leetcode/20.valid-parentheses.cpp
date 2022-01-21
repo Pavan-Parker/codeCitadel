@@ -25,7 +25,7 @@ public:
 
     Node()
     {
-        val = ' ';
+        val = 'x';
         next = nullptr;
     }
 };
