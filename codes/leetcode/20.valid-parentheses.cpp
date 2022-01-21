@@ -25,14 +25,14 @@ public:
 
     Node()
     {
-        val = -1;
+        val = ' ';
         next = nullptr;
     }
 };
 class LLStack
 {
 public:
-    Node *head = nullptr;
+    Node *head;
     void push(char val)
     {
         Node *newNode;
