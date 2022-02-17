@@ -9,7 +9,7 @@ int main()
     // Allocation of 10 * 10 array
     int **p = (int **)malloc(ROWS * sizeof(int *));
     for (int i = 0; i < COLUMNS; i++)
-        p[i] = malloc(COLUMNS * sizeof(int));
+        p[i] = (int *)malloc(COLUMNS * sizeof(int));
 
     for (int i = 0; i < ROWS; i++)
     {
