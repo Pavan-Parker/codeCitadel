@@ -1,1 +1,3 @@
-#Embedded Coder
+# Embedded Coder
+
+- Two setups are possible
