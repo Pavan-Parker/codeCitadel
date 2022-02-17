@@ -4,6 +4,11 @@
 #define ROWS 9
 #define COLUMNS 9
 
+void increment(int *x)
+{
+    (*x)++;
+}
+
 int main()
 {
     // Allocation of 10 * 10 array
@@ -16,6 +21,14 @@ int main()
         for (int j = 0; j < COLUMNS; j++)
         {
             p[i][j] = 10 * i + j;
+            printf("p[%d][%d] = %d\n", i, j, p[i][j]);
+        }
+    }
+    for (int i = 0; i < ROWS; i++)
+    {
+        for (int j = 0; j < COLUMNS; j++)
+        {
+            increment(&p[i][j]);
             printf("p[%d][%d] = %d\n", i, j, p[i][j]);
         }
     }
