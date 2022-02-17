@@ -7,3 +7,7 @@
   - Deployment Mode
     - The env will be in target itself.
     - Release Mode.
+
+Are there any plans to tweak the OS configuration itself? to make it minimal.
+
+ 
