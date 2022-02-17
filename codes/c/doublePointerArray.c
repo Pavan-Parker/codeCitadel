@@ -21,7 +21,7 @@ int main()
     }
     printf("size of p = %d\n", sizeof(p));
     printf("size of p[0] = %d\n", sizeof(p[0]));
-    printf("size of p[0] = %d\n", sizeof(p[0]));
+    printf("size of p[0][0] = %d\n", sizeof(p[0][0]));
 
     for (int i = 0; i < COLUMNS; i++)
         free(p[i]);
