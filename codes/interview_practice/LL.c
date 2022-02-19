@@ -3,17 +3,18 @@
 struct Node
 {
     int value;
-    Node *next = NULL;
+    struct Node *next = NULL;
 };
 
 Node *createLL(int *array, int size)
 {
-    Node *head;
-    Node *temp;
+    struct Node *head;
+    struct Node *current=head;
+    struct Node *temp;
     for (int i = 0; i < size; i++)
     {
         temp->value = array[i];
-        temp
+        temp->next
     }
 }
 
