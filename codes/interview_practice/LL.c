@@ -74,7 +74,7 @@ struct Node *quickSort(struct Node *head, int size)
      */
     struct Node *temp = head;
     struct Node *temp2 = temp->next;
-    while (temp->value > temp2->value)
+    while (temp->value > temp2->next->value)
     {
         temp2 = temp2->next;
     }
