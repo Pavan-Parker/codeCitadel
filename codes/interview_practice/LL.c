@@ -3,7 +3,7 @@
 struct Node
 {
     int value;
-    struct Node *next = NULL;
+    struct Node *next;
 };
 
 Node *createLL(int *array, int size)
@@ -13,9 +13,16 @@ Node *createLL(int *array, int size)
     for (int i = 0; i < size; i++)
     {
         struct Node *new = (struct Node *)malloc(sizeof(struct Node));
-        new->value=array[i];
-        temp->value = array[i];
-        temp->next
+        new->value = array[i];
+        new->next = NULL;
+        if (i)
+            temp->next = new;
+        else
+        {
+            temp = new;
+            head = new;
+        }
+        temp = temp->next;
     }
 }
 
