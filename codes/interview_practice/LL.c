@@ -3,15 +3,16 @@
 struct Node
 {
     int value;
-    Node *next=NULL;
+    Node *next = NULL;
 };
 
-Node* createLL(int *array, int size)
+Node *createLL(int *array, int size)
 {
-    Node* head;
-    Node* temp = head;
-    for(int i=0;i<size;i++)
+    Node *head;
+    Node *temp;
+    for (int i = 0; i < size; i++)
     {
+        temp->value = array[i];
         temp
     }
 }
@@ -19,7 +20,7 @@ Node* createLL(int *array, int size)
 int main()
 {
     int given[] = {1, 24, 12, 9, 24, 25, 10, 3, 2, 2};
-    printf("given:%zu bytes",sizeof(given));
-    
+    printf("given:%zu bytes", sizeof(given));
+
     return 0;
 }
