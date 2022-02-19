@@ -9,7 +9,7 @@ struct Node
 struct Node *createLL(int *array, int size)
 {
     struct Node *head;
-    struct Node *temp = head;
+    struct Node *temp;
     for (int i = 0; i < size; i++)
     {
         struct Node *new = (struct Node *)malloc(sizeof(struct Node));
