@@ -72,8 +72,8 @@ struct Node *quickSort(struct Node *head, int size)
      * 2. Swap with the one before where the condition breaks.
      * 3. Call Sort on both halves.
      */
-    struct Node *temp = head;
-    struct Node *temp2 = temp->next;
+    struct Node *pivot = head;
+    struct Node *temp = temp->next;
     while (temp->value > temp2->next->value)
     {
         temp2 = temp2->next;
