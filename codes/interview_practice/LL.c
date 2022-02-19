@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 struct Node
 {
     int value;
@@ -9,9 +9,11 @@ struct Node
 Node *createLL(int *array, int size)
 {
     struct Node *head;
-    struct Node *temp;
+    struct Node *temp = head;
     for (int i = 0; i < size; i++)
     {
+        struct Node *new = (struct Node *)malloc(sizeof(struct Node));
+        new->value=array[i];
         temp->value = array[i];
         temp->next
     }
