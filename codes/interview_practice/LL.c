@@ -53,12 +53,16 @@ void printLL(struct Node *head)
     printf("NULL\n");
 }
 
+struct Node* quickSort(struct Node* head)
+{
+    
+}
+
 int main()
 {
 
     int given[] = {1, 24, 12, 9, 24, 25, 10, 3, 2, 2};
     printf("given:%zu bytes\n", sizeof(given));
-
     struct Node *head = createLL(given, sizeof(given) / sizeof(int));
     printLL(head);
     destroyLL(head);
