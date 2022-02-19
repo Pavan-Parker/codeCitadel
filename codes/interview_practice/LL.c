@@ -16,13 +16,15 @@ struct Node *createLL(int *array, int size)
         new->value = array[i];
         new->next = NULL;
         if (i)
+        {
             temp->next = new;
+            temp = temp->next;
+        }
         else
         {
             temp = new;
             head = new;
         }
-        temp = temp->next;
     }
 
     return head;
@@ -48,14 +50,14 @@ void printLL(struct Node *head)
         printf("%d -> ", temp->value);
         temp = temp->next;
     }
-    printf("NULL");
+    printf("NULL\n");
 }
 
 int main()
 {
 
     int given[] = {1, 24, 12, 9, 24, 25, 10, 3, 2, 2};
-    printf("given:%zu bytes", sizeof(given));
+    printf("given:%zu bytes\n", sizeof(given));
 
     struct Node *head = createLL(given, sizeof(given) / sizeof(int));
     printLL(head);
