@@ -9,7 +9,6 @@ struct Node
 Node *createLL(int *array, int size)
 {
     struct Node *head;
-    struct Node *current=head;
     struct Node *temp;
     for (int i = 0; i < size; i++)
     {
