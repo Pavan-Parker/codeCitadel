@@ -82,6 +82,7 @@ struct Node *quickSort(struct Node *head, int size)
     int currentVal = temp->value;
     temp->value = temp2->value;
     temp2->value = currentVal;
+    quickSort()
 }
 
 int main()
