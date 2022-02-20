@@ -69,21 +69,22 @@ struct Node *quickSort(struct Node *head, int size)
 {
     /*
      * 0. temp = head->next
-     * 1. Compare head with temp if less than head pop it into start of LL. 
+     * 1. Compare head with temp if less than head pop it into start of LL.
      * 2. temp = temp->next
      * 3. Repat 1 if temp != NULL
      * 3. Call Sort on both halves.
      */
     struct Node *pivot = head;
-    struct Node *temp = temp->next;
-    while (pivot->value > temp2->value)
+    struct Node *prev = pivot;
+    struct Node *current = pivot->next;
+    while (pivot->value > current->value)
     {
-        temp2 = temp2->next;
-    }
 
-    int currentVal = pivot->value;
-    pivot->value = temp2->value;
-    temp2->value = currentVal;
+        int currentVal = pivot->value;
+        pivot->value = temp2->value;
+        temp2->value = currentVal;
+        
+    }
     quickSort()
 }
 
