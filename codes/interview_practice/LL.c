@@ -90,7 +90,7 @@ void quickSort(struct Node *head, int size)
     int leftHalfSize = 0;
     int currentIteratorPos = 1;
     printf(lineSeperator);
-    printf("Given pivot is %d\n", pivot->value);
+    printf("Given pivot:%d , size:%d\n", pivot->value, size);
     printLL(head);
     printf(lineSeperator);
 
