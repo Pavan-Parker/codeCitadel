@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+#define lineSeperator "\n====================================\n"
+
 struct Node
 {
     int value;
@@ -85,8 +88,11 @@ void quickSort(struct Node *head, int size)
     struct Node *leftHalf = pivot;
     struct Node *current = pivot->next;
     int leftHalfSize = 0;
+    printf(lineSeperator);
+    printf("Given pivot is %d\n", pivot->value);
     printLL(head);
-    printf("pivot is %d\n", pivot->value);
+    printf(lineSeperator);
+
     if (size > 1)
     {
         while (current != NULL)
@@ -104,6 +110,7 @@ void quickSort(struct Node *head, int size)
         swap(leftHalf, pivot);
         quickSort(head, leftHalfSize);
         quickSort(leftHalf->next, size - leftHalfSize - 1);
+        
         return;
     }
 }
