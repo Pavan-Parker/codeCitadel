@@ -65,7 +65,7 @@ int getSize(struct Node *head)
     return count;
 }
 
-struct Node *quickSort(struct Node *head, int size)
+void *quickSort(struct Node *head, int size)
 {
     /*
      * 0. temp = head->next
@@ -77,11 +77,14 @@ struct Node *quickSort(struct Node *head, int size)
     struct Node *pivot = head;
     struct Node *leftHalf = pivot;
     struct Node *current = pivot->next;
-    while (current->value <= pivot->value)
+    while (current != NULL)
     {
-        int currentVal = pivot->value;
-        pivot->value = temp2->value;
-        temp2->value = currentVal;
+        if (current->value <= pivot->value)
+        {
+            int currentVal = current->value;
+            current->value = leftHalf->value;
+            leftHalf->value = currentVal;
+        }
     }
     quickSort()
 }
