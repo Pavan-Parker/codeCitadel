@@ -99,6 +99,8 @@ void quickSort(struct Node *head, int size)
             }
             current = current->next;
         }
+        printf("After Swap, with LeftHalfSize:%d\n",leftHalfSize);
+        printLL(head);
         swap(leftHalf, pivot);
         quickSort(head, leftHalfSize);
         quickSort(leftHalf->next, size - leftHalfSize - 1);
@@ -108,7 +110,7 @@ void quickSort(struct Node *head, int size)
 
 int main()
 {
-    int given[] = {24, 1, 12, 9, 24, 25, 10, 3, 2, 2};
+    int given[] = {8, 1, 12, 9, 24, 25, 10, 3, 2, 2};
     printf("given:%zu bytes\n", sizeof(given));
     struct Node *head = createLL(given, sizeof(given) / sizeof(int));
     printLL(head);
