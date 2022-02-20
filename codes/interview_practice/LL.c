@@ -75,15 +75,13 @@ struct Node *quickSort(struct Node *head, int size)
      * 3. Call Sort on both halves.
      */
     struct Node *pivot = head;
-    struct Node *prev = pivot;
+    struct Node *leftHalf = pivot;
     struct Node *current = pivot->next;
-    while (pivot->value > current->value)
+    while (current->value <= pivot->value)
     {
-
         int currentVal = pivot->value;
         pivot->value = temp2->value;
         temp2->value = currentVal;
-        
     }
     quickSort()
 }
