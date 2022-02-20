@@ -105,12 +105,13 @@ void quickSort(struct Node *head, int size)
             }
             current = current->next;
         }
-        printf("After Swap, with LeftHalfSize:%d\n", leftHalfSize);
+        printf("Before, with LeftHalfSize:%d\n", leftHalfSize);
         printLL(head);
         swap(leftHalf, pivot);
+        printf("After, with LeftHalfSize:%d\n", leftHalfSize);
+        printLL(head);
         quickSort(head, leftHalfSize);
         quickSort(leftHalf->next, size - leftHalfSize - 1);
-        
         return;
     }
 }
