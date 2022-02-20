@@ -18,6 +18,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
+            "miDebuggerArgs": "-g",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -26,7 +27,7 @@
                 }
             ],
             "preLaunchTask": "C/C++: g++ build active file",
-            "miDebuggerPath": "/usr/bin/gdb -g"
+            "miDebuggerPath": "/usr/bin/gdb"
         }
     ]
 }
