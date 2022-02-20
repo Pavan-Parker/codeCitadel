@@ -65,7 +65,14 @@ int getSize(struct Node *head)
     return count;
 }
 
-void *quickSort(struct Node *head, int size)
+void swap(struct Node *nodeA, struct Node *nodeB)
+{
+    int tempVal = nodeA->value;
+    nodeA->value = nodeB->value;
+    nodeB->value = tempVal;
+}
+
+void quickSort(struct Node *head, int size)
 {
     /*
      * 0. temp = head->next
@@ -75,18 +82,26 @@ void *quickSort(struct Node *head, int size)
      * 3. Call Sort on both halves.
      */
     struct Node *pivot = head;
-    struct Node *leftHalf = pivot;
+    struct Node *leftHalf = pivot->next;
     struct Node *current = pivot->next;
-    while (current != NULL)
+    int leftHalfSize = 0;
+    if (size > 1)
     {
-        if (current->value <= pivot->value)
+        while (current != NULL)
         {
-            int currentVal = current->value;
-            current->value = leftHalf->value;
-            leftHalf->value = currentVal;
+            if (current->value <= pivot->value)
+            {
+                swap(current, leftHalf);
+                leftHalf = leftHalf->next;
+                leftHalfSize++;
+            }
+            current = current->next;
         }
+        swap(leftHalf, pivot);
+        quickSort(head, leftHalfSize);
+        quickSort(head, size-leftHalfSize-1);
+        return;
     }
-    quickSort()
 }
 
 int main()
