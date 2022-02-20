@@ -82,7 +82,7 @@ void quickSort(struct Node *head, int size)
      * 3. Call Sort on both halves.
      */
     struct Node *pivot = head;
-    struct Node *leftHalf = pivot->next;
+    struct Node *leftHalf = pivot;
     struct Node *current = pivot->next;
     int leftHalfSize = 0;
     printLL(head);
@@ -93,13 +93,13 @@ void quickSort(struct Node *head, int size)
         {
             if (current->value <= pivot->value)
             {
-                swap(current, leftHalf);
                 leftHalf = leftHalf->next;
+                swap(current, leftHalf);
                 leftHalfSize++;
             }
             current = current->next;
         }
-        printf("After Swap, with LeftHalfSize:%d\n",leftHalfSize);
+        printf("After Swap, with LeftHalfSize:%d\n", leftHalfSize);
         printLL(head);
         swap(leftHalf, pivot);
         quickSort(head, leftHalfSize);
