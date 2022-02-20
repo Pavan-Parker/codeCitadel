@@ -88,7 +88,7 @@ void quickSort(struct Node *head, int size)
     struct Node *leftHalf = pivot;
     struct Node *current = pivot->next;
     int leftHalfSize = 0;
-    int currentIteratorPos = ;
+    int currentIteratorPos = 1;
     printf(lineSeperator);
     printf("Given pivot is %d\n", pivot->value);
     printLL(head);
@@ -96,7 +96,7 @@ void quickSort(struct Node *head, int size)
 
     if (size > 1)
     {
-        while (current != NULL)
+        while ((current != NULL) && (currentIteratorPos < size))
         {
             if (current->value <= pivot->value)
             {
