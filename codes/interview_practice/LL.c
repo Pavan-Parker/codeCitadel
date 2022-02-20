@@ -68,19 +68,21 @@ int getSize(struct Node *head)
 struct Node *quickSort(struct Node *head, int size)
 {
     /*
-     * 1. Compare head untill it is less than the iterator.
-     * 2. Swap with the one before where the condition breaks.
+     * 0. temp = head->next
+     * 1. Compare head with temp if less than head pop it into start of LL. 
+     * 2. temp = temp->next
+     * 3. Repat 1 if temp != NULL
      * 3. Call Sort on both halves.
      */
     struct Node *pivot = head;
     struct Node *temp = temp->next;
-    while (temp->value > temp2->next->value)
+    while (pivot->value > temp2->value)
     {
         temp2 = temp2->next;
     }
 
-    int currentVal = temp->value;
-    temp->value = temp2->value;
+    int currentVal = pivot->value;
+    pivot->value = temp2->value;
     temp2->value = currentVal;
     quickSort()
 }
