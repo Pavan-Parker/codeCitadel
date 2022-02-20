@@ -18,7 +18,6 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerArgs": "-g",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
