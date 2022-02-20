@@ -105,6 +105,7 @@ void quickSort(struct Node *head, int size)
                 leftHalfSize++;
             }
             current = current->next;
+            currentIteratorPos++;
         }
         printf("Before, with LeftHalfSize:%d\n", leftHalfSize);
         printLL(head);
