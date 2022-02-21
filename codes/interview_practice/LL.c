@@ -77,12 +77,16 @@ void swap(struct Node *nodeA, struct Node *nodeB)
 
 void quickSort(struct Node *head, int size)
 {
+    if (size <= 1)
+        return;
+
     /*
-     * 0. temp = head->next
-     * 1. Compare head with temp if less than head pop it into start of LL.
+     * 0. pivot = head; leftHalf = pivot; current = pivot->next
+     * 1. Compare current with pivot
+     * 1a. if less than pop -----> leftHalf++; swap(current, leftHalf).
      * 2. temp = temp->next
-     * 3. Repat 1 if temp != NULL
-     * 3. Call Sort on both halves.
+     * 3. Repeat 1 if current != NULL
+     * 3. Call Sort on till leftHalf and rightHalf-pivot.
      */
     struct Node *pivot = head;
     struct Node *leftHalf = pivot;
@@ -94,37 +98,115 @@ void quickSort(struct Node *head, int size)
     printLL(head);
     printf(lineSeperator);
 
-    if (size > 1)
+    while ((current != NULL) && (currentIteratorPos < size))
     {
-        while ((current != NULL) && (currentIteratorPos < size))
+        if (current->value <= pivot->value)
         {
-            if (current->value <= pivot->value)
-            {
-                leftHalf = leftHalf->next;
-                swap(current, leftHalf);
-                leftHalfSize++;
-            }
-            current = current->next;
-            currentIteratorPos++;
+            leftHalf = leftHalf->next;
+            swap(current, leftHalf);
+            leftHalfSize++;
         }
-        printf("Before, with LeftHalfSize:%d\n", leftHalfSize);
-        printLL(head);
-        swap(leftHalf, pivot);
-        printf("After, with LeftHalfSize:%d\n", leftHalfSize);
-        printLL(head);
-        quickSort(head, leftHalfSize);
-        quickSort(leftHalf->next, size - leftHalfSize - 1);
-        return;
+        current = current->next;
+        currentIteratorPos++;
+    }
+    printf("Before, with LeftHalfSize:%d\n", leftHalfSize);
+    printLL(head);
+    swap(leftHalf, pivot);
+    printf("After, with LeftHalfSize:%d\n", leftHalfSize);
+    printLL(head);
+    quickSort(head, leftHalfSize);
+    quickSort(leftHalf->next, size - leftHalfSize - 1);
+    return;
+}
+
+void deleteNextNode(struct Node *current)
+{
+    struct Node *temp = current->next->next;
+    free(current->next);
+    current->next = temp;
+}
+
+void deduplicate(struct Node *head)
+{
+    struct Node *current = head;
+    while (current->next != NULL)
+    {
+        if (current->next->value == current->value)
+            deleteNextNode(current);
+        else
+            current = current->next;
     }
 }
 
+void mergeSort(struct Node *head, int size)
+{
+    if (size <= 1)
+        return;
+
+    /*
+     * 0. pivot = head; leftHalf = pivot; current = pivot->next
+     * 1. Compare current with pivot
+     * 1a. if less than pop -----> leftHalf++; swap(current, leftHalf).
+     * 2. temp = temp->next
+     * 3. Repeat 1 if current != NULL
+     * 3. Call Sort on till leftHalf and rightHalf-pivot.
+     */
+    struct Node *pivot = head;
+    struct Node *leftHalf = pivot;
+    struct Node *current = pivot->next;
+    int leftHalfSize = 0;
+    int currentIteratorPos = 1;
+    printf(lineSeperator);
+    printf("Given pivot:%d , size:%d\n", pivot->value, size);
+    printLL(head);
+    printf(lineSeperator);
+
+    while ((current != NULL) && (currentIteratorPos < size))
+    {
+        if (current->value <= pivot->value)
+        {
+            leftHalf = leftHalf->next;
+            swap(current, leftHalf);
+            leftHalfSize++;
+        }
+        current = current->next;
+        currentIteratorPos++;
+    }
+    printf("Before, with LeftHalfSize:%d\n", leftHalfSize);
+    printLL(head);
+    swap(leftHalf, pivot);
+    printf("After, with LeftHalfSize:%d\n", leftHalfSize);
+    printLL(head);
+    quickSort(head, leftHalfSize);
+    quickSort(leftHalf->next, size - leftHalfSize - 1);
+    return;
+}
 int main()
 {
-    int given[] = {8, 1, 12, 9, 24, 25, 10, 3, 2, 2};
+    int given[] = {1, 24, 12, 9, 24, 25, 10, 3, 2, 2};
     printf("given:%zu bytes\n", sizeof(given));
     struct Node *head = createLL(given, sizeof(given) / sizeof(int));
     printLL(head);
     quickSort(head, getSize(head));
+    printf(lineSeperator);
+    printf(lineSeperator);
+    printf(lineSeperator);
+    printf(lineSeperator);
+    printLL(head);
+    printf(lineSeperator);
+    printf(lineSeperator);
+    printf(lineSeperator);
+    printf(lineSeperator);
+    deduplicate(head);
+    printf(lineSeperator);
+    printf(lineSeperator);
+    printf(lineSeperator);
+    printf(lineSeperator);
+    printLL(head);
+    printf(lineSeperator);
+    printf(lineSeperator);
+    printf(lineSeperator);
+    printf(lineSeperator);
     destroyLL(head);
     return 0;
 }
