@@ -4,7 +4,7 @@
 
 void printInBinary(unsigned int x)
 {
-    for (unsigned int i = 0; i < (sizeof(x) * 8); i++)
+    for (unsigned int i = (sizeof(x) * 8) - 1; i < 0; i--)
         printf("%u", (x >> i) && 1);
     printf("\n");
 }
@@ -24,7 +24,7 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
      * 8. Left shift the result by remaining count.
      * 9. Copy LSB to result and return result
      */
-    unsigned int lsb = MASK_LSB(x, (32-N));
+    unsigned int lsb = MASK_LSB(x, (32 - N));
     unsigned int msb = MASK_MSB(x, N);
 
     printf("msb:");
