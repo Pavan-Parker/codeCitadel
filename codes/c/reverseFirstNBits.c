@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define MASK_LSB(x, i) ((x << (i)) >> (i))
 #define MASK_MSB(x, i) ((x >> (i)) << (i))
-#define printName(x) #x
+
 void printInBinary(unsigned int x)
 {
     for (unsigned int i = 0; i < (sizeof(x) * 8); i++)
@@ -22,10 +22,11 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
      * 6. Decrement count by one.
      * 7. Repeat 4 if MSB isn't zero.
      * 8. Left shift the result by remaining count.
-     * 9. Copy LSB to result and return result 
+     * 9. Copy LSB to result and return result
      */
-    unsigned int lsb = MASK_LSB(x, 32 - N);
+    unsigned int lsb = MASK_LSB(x, (32-N));
     unsigned int msb = MASK_MSB(x, N);
+
     printf("msb:");
     printInBinary(msb);
     printf("lsb:");
@@ -35,7 +36,7 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
 
     msb >>= (32 - N);
 
-    while(msb)
+    while (msb)
     {
         result |= (msb & 1);
         msb >>= 1;
@@ -49,9 +50,7 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
 }
 int main()
 {
-    unsigned int given =1024, result, N=20;
-    // scanf("%u", &given);
-    // scanf("%u", &N);
+    unsigned int given = 1024, result, N = 20;
     result = reverseNBits(given, N);
     printf("Given: ");
     printInBinary(given);
