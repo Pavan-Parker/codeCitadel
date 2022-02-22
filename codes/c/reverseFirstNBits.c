@@ -5,7 +5,7 @@
 void printInBinary(unsigned int x)
 {
     for (int i = (sizeof(x) * 8) - 1; i >= 0; i--)
-        printf("%u", (x >> i) && 1);
+        printf("%u", (x >> i) & 1);
     printf("\n");
 }
 
