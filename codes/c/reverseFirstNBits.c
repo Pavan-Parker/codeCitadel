@@ -24,8 +24,8 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
      * 8. Left shift the result by remaining count.
      * 9. Copy LSB to result and return result
      */
-    unsigned int msb = MASK_MSB(x, N);
-    unsigned int lsb = MASK_LSB(x, (32 - N));
+    unsigned int msb = MASK_MSB(x, (32 - N));
+    unsigned int lsb = MASK_LSB(x, N);
 
     printf("msb:");
     printInBinary(msb);
@@ -52,7 +52,7 @@ int main()
 {
     unsigned int given = 0x0001 << 16, result, N = 20;
     result = reverseNBits(given, N);
-    printf("Given: %u : ", given);
+    printf("Given : %u : ", given);
     printInBinary(given);
     printf("N:%u\n", N);
     printf("Result: %u : ", result);
