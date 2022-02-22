@@ -48,16 +48,17 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
         count--;
     }
 
-    printf("Count:%d::Untill zero:",count);
+    printf("Count:%d::Untill zero:", count);
     printInBinary(result);
 
     result <<= count;
+    result <<= (32 - N);
     result |= lsb;
     return result;
 }
 int main()
 {
-    unsigned int given = (1 << 31), result, N = 20;
+    unsigned int given = (1 << 16), result, N = 20;
     printf("Given : %u : ", given);
     printInBinary(given);
     printf("N:%u\n", N);
