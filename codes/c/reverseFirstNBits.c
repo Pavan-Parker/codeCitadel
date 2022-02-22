@@ -12,6 +12,7 @@ void printInBinary(unsigned int x)
 unsigned int reverseNBits(unsigned int x, unsigned int N)
 {
     /*
+     & STEPS
      * 0. intiate count to N.
      * 1. Mask and save lsb for later.
      * 2. Mask msb and assign it to result.
