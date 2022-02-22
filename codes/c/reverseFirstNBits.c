@@ -4,7 +4,7 @@
 
 void printInBinary(unsigned int x)
 {
-    for (unsigned int i = (sizeof(x) * 8) - 1; i < 0; i--)
+    for (int i = (sizeof(x) * 8) - 1; i >= 0; i--)
         printf("%u", (x >> i) && 1);
     printf("\n");
 }
@@ -50,7 +50,7 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
 }
 int main()
 {
-    unsigned int given = 1, result, N = 20;
+    unsigned int given = 1024, result, N = 20;
     result = reverseNBits(given, N);
     printf("Given: ");
     printInBinary(given);
