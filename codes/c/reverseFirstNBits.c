@@ -57,7 +57,7 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
 }
 int main()
 {
-    unsigned int given = 0x0001 << 16, result, N = 20;
+    unsigned int given = (1 << 31), result, N = 20;
     printf("Given : %u : ", given);
     printInBinary(given);
     printf("N:%u\n", N);
