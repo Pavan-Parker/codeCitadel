@@ -30,9 +30,9 @@
         ""
       ],
       "stopAtEntry": false,
-      "cwd": "/home/blackmath/Documents/projects/codeCitadel",
+      "cwd": "/home/blackmath/Documents/projects/codeCitadel/codes/c",
       "environment": [],
-      "program": "/home/blackmath/Documents/projects/codeCitadel/build/Debug/outDebug",
+      "program": "/home/blackmath/Documents/projects/codeCitadel/codes/c/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
