@@ -30,7 +30,7 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
      */
     unsigned int msb = MASK_MSB(x, (32 - N));
     unsigned int lsb = MASK_LSB(x, N);
-    
+
     printf("msb:");
     printInBinary(msb);
     printf("lsb:");
