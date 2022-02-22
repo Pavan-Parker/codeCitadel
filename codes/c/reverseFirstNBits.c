@@ -30,7 +30,7 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
     unsigned int result = msb;
     unsigned int count = N;
 
-    msb >>= 32 - N;
+    msb >>= (32 - N);
 
     while (msb)
     {
