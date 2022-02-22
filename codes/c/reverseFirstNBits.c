@@ -50,7 +50,7 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
 }
 int main()
 {
-    unsigned int given = 1024, result, N = 20;
+    unsigned int given = 1, result, N = 20;
     result = reverseNBits(given, N);
     printf("Given: ");
     printInBinary(given);
