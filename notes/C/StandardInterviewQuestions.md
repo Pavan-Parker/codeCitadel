@@ -2,7 +2,7 @@
 
 1. Describe inheritance, multithreading, watchdog timer, etc.
     1. Inheritance: Inheritance allows us to define a class in terms of another class, which makes it easier to create and maintain an application.    Inheritance allows to reuse the code functionally and allows fast implementation time.
-    2. Multithreading: Multithreading is the ability of a program to manage its use by more than one user at a time and to even manage multiple requests by the same user without having to have multiple copies of the programming running in the computer.
+    2. Multi-threading: Multi-threading is the ability of a program to manage its use by more than one user at a time and to even manage multiple requests by the same user without having to have multiple copies of the programming running in the computer.
     3.  Watchdog timer: WDT is a piece of hardware that can be used to automatically detect software anomalies and reset the processor if any occur.
 2. What is virtual memory and caches(Also read upon Cache coherency) 
     4. Physical memory is scarce in machines, so virtual memory is an optimization to expand that
@@ -10,9 +10,9 @@
 3. What are priority inversion, reentrancy, spinlocks
     6. Priority Inversion: lower priority task running with semaphore, higher priority is waiting for semaphore. Medium priority task interrupts, runs, and then high priority can run
         1. Solution is to bump priority of low priority to highest priority and then it can’t be preempted by medium (It’s called priority inheritance)
-    7. Reentrancy: function is reentrant when during its execution if it gets interrupted, it can return and resume function without any change
+    7. Reentrant: function is reentrant when during its execution if it gets interrupted, it can return and resume function without any change
         2. Can’t use global/static data
-    8. Spinlock: a task is waiting for a certain resource that is locked and is continually checking if it opened up, using most of the CPU resources
+    8. Spin-lock: a task is waiting for a certain resource that is locked and is continually checking if it opened up, using most of the CPU resources
         3. Good rule of thumb - avoid them in user code
 4. What is atomic programming/non-locking operation?
     9. Atomic operations are operations that are guaranteed to keep their values safe
@@ -284,7 +284,7 @@ A virtual function is a member function which is declared within base class and 
 16. Float to int conversion
 17. Memory map of program
     29. Output from linker script
-    30. Bss is uninitialized data
+    30. BSS is uninitialized data
     31. Data is initialized data
     32. Text is names, symbols etc
 18. If we declare more number of variables than the registers available on the processor? Where they will be stored.
@@ -343,7 +343,7 @@ A virtual function is a member function which is declared within base class and 
     13. ((x != 0) && !(x & (x - 1)));
         1. Works for other than 0 so need another check for 0
 12. Programming problem (live) (reverse a linked list)
-13. Function that takes a 2d array of a "sudoku board", and checks to make sure it is a possible board
+13. Function that takes a 2D array of a "sudoku board", and checks to make sure it is a possible board
 14. Explain and describe how binary search tree works
     14. O(n) worst, O(log n) average
 15. Given a list from 1 to 100, name all the different ways you can determine if there are duplicates. Which is the most efficient?
