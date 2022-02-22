@@ -6,7 +6,7 @@ void printInBinary(unsigned int x)
 {
     for (int i = 0; i < (sizeof(x) * 8); i++)
     {
-        
+        printf("%u", )
     }
 }
 
