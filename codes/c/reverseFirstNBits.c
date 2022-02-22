@@ -35,7 +35,7 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
     printInBinary(msb);
     printf("lsb:");
     printInBinary(lsb);
-    unsigned int result = msb;
+    unsigned int result = 0;
     unsigned int count = N;
 
     msb >>= (32 - N);
