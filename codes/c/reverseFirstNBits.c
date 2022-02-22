@@ -1,6 +1,15 @@
 #include <stdio.h>
 #define MASK_LSB(x, i) ((x << (i)) >> (i))
 #define MASK_MSB(x, i) ((x >> (i)) << (i))
+
+void printInBinary(unsigned int x)
+{
+    for (int i = 0; i < (sizeof(x) * 8); i++)
+    {
+        
+    }
+}
+
 unsigned int reverseNBits(unsigned int x, unsigned int N)
 {
     /*
