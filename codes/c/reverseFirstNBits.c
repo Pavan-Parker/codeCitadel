@@ -47,8 +47,10 @@ unsigned int reverseNBits(unsigned int x, unsigned int N)
         msb >>= 1;
         count--;
     }
+
     printf("Count:%d::Untill zero:",count);
     printInBinary(result);
+
     result <<= count;
     result |= lsb;
     return result;
